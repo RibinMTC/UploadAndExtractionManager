@@ -1,0 +1,11 @@
+{
+	"shared_volume_base": "/content-storage",
+	"content_base":"content-base",
+	"thumbnails_base":"output-thumbnails",
+	"cineast_base":"cineast",
+	"cineast_job_file":"example_job.json",
+	"cineast_config_json":"cineast.json",
+	"cottontail_base":"cottontail",
+	"cottontail_config_json": "config.json"
+
+}

@@ -1,6 +1,6 @@
 {
     "input": {
-        "path": "/local/home/cribin/Documents/AestheticsBackup/Datasets/ava_large_dataset/extracted_images/images/14_1",
+        "path": "/local/home/cribin/Documents/AestheticsBackup/Datasets/ava_large_dataset/extracted_images/images/2_1",
         "depth": 2,
         "skip": 0,
         "id": {
@@ -62,7 +62,7 @@
         {
             "name": "ShotThumbnailsExporter",
             "properties": {
-                "destination": "/local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/content-storage-test/output-thumbnails"
+                "destination": "/content-storage/output-thumbnails"
             }
         }
     ],

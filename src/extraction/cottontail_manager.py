@@ -41,8 +41,9 @@ class CottontailManager(SubprocessManager):
             count = self.__get_count_from_log_file()
             if count is None or count == -1:
                 count = 0
-        except:
+        except Exception as e:
             exception_occurred = True
+            print(str(e))
         finally:
             if exception_occurred:
                 print("Finished table element counting with errors!")

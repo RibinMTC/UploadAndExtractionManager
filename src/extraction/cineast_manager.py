@@ -49,8 +49,9 @@ class CineastManager(SubprocessManager):
             super()._communicate_with_process()
 
             super()._start_process()
-        except:
+        except Exception as e:
             exception_occurred = True
+            print(str(e))
         finally:
             if exception_occurred:
                 print("Finished extraction with errors!")

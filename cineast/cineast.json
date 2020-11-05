@@ -136,8 +136,8 @@
         "serveContent": true,
         "serveUI": true,
         "uiLocation": "dist",
-        "thumbnailLocation": "/local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/content-storage-test/output-thumbnails",
-        "objectLocation": "/local/home/cribin/Documents/AestheticsBackup/Datasets/ava_large_dataset/extracted_images/images/"
+        "thumbnailLocation": "/content-storage/output-thumbnails",
+        "objectLocation": "/content-storage/content-base"
     },
     "monitoring": {
         "enablePrometheus": false,

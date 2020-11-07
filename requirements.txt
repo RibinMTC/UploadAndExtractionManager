@@ -9,5 +9,6 @@ itsdangerous==1.1.0
 Jinja2==2.11.2
 MarkupSafe==1.1.1
 progressbar==2.5
+requests==2.24.0
 urllib3==1.25.11
 Werkzeug==1.0.1

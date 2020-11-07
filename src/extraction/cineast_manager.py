@@ -7,7 +7,7 @@ class CineastManager(SubprocessManager):
     def __init__(self, server_config_data):
         self.__cineast_job_file_str = server_config_data.cineast_job_abs_path
         self._setup_config(server_config_data)
-        cineast_start_cmd = "java -jar cineast-api-3.0.1-full.jar cineast.json"
+        cineast_start_cmd = "java -jar cineast-api-3.0.1-full.jar " + server_config_data.cineast_config_abs_path
         super().__init__(server_config_data.cineast_base_path_str, cineast_start_cmd)
 
     def _setup_config(self, server_config_data):

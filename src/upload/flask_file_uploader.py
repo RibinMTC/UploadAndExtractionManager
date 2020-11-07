@@ -1,6 +1,7 @@
 import imghdr
 import os
 from pathlib import Path
+from shutil import copyfile
 
 from flask import Flask, render_template, request
 from flask_dropzone import Dropzone
@@ -72,10 +73,48 @@ def create_directories_if_not_exists(directory_abs_path):
         print("Created folder: " + directory_abs_path)
 
 
+def copy_if_file_does_not_exist(file_path_dest_str, file_path_src_str):
+    my_file = Path(file_path_dest_str)
+    if not my_file.is_file():
+        copyfile(file_path_src_str, file_path_dest_str)
+        print("Copied : " + file_path_src_str + " to :" + file_path_dest_str)
+
+
+# @app.route('/', methods=['POST', 'GET'])
+# def send_test_message_to_ml_predictor():
+#     try:
+#         # test_path = base_path / "test_config/cineast.json"
+#         cineast_shared_bind_mound_config = "/shared_config/cineast.json"
+#         cineast_config_dict = json_manager.get_dict_from_json(cineast_shared_bind_mound_config)
+#         ml_predictor_address = cineast_config_dict['mlPredictorsConfig']['facial emotion']
+#         image_path = str((base_path / "oldman.jpg").absolute())
+#         dict_to_send = {'contentPath': image_path,
+#                         'startFrame': 0,
+#                         'endFrame': 0}
+#         response = requests.post(ml_predictor_address, json=dict_to_send)
+#         print("Received response: " + response.text)
+#         return "Success!"
+#     except Exception as e:
+#         print("Exception occured when calling ml predictor")
+#         print(str(e))
+#         return "Try again!"
+
+
 serverConfigData = ServerConfigData(base_path)
 server_content_base_path = Path(serverConfigData.server_content_base_path_str)
 create_directories_if_not_exists(serverConfigData.server_content_base_path_str)
 create_directories_if_not_exists(serverConfigData.thumbnails_base_path_str)
+
+create_directories_if_not_exists(serverConfigData.cineast_shared_config_path_str)
+copy_if_file_does_not_exist(serverConfigData.cineast_job_abs_path,
+                            serverConfigData.cineast_base_path_str + '/example_job.json')
+copy_if_file_does_not_exist(serverConfigData.cineast_config_abs_path,
+                            serverConfigData.cineast_base_path_str + '/cineast.json')
+
+create_directories_if_not_exists(serverConfigData.cottontail_shared_config_path_str)
+copy_if_file_does_not_exist(serverConfigData.cottontail_config_abs_path,
+                            serverConfigData.cottontail_base_path_str + '/config.json')
+
 cineast_and_cottontail_manager = CineastAndCottontailManager(serverConfigData)
 
 if __name__ == '__main__':

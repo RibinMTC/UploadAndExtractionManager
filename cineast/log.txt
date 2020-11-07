@@ -1,29 +1,350 @@
 
-************************************** 04/11/2020 20:02:00 ***********************************
-2020-11-04 20:02:01.232 [main] INFO o.v.c.s.c.Config - Config file loaded!
-2020-11-04 20:02:01.372 [main] INFO o.v.c.c.d.c.CottontailWrapper - Connected to Cottontail in 120 ms at localhost:1865
-2020-11-04 20:02:01.573 [main] DEBUG o.v.c.c.d.d.r.TagReader - Tag Reader initialized in 164 ms
-2020-11-04 20:02:01.597 [main] INFO o.e.j.u.log - Logging initialized @888ms to org.eclipse.jetty.util.log.Slf4jLog
-2020-11-04 20:02:01.646 [main] WARN o.e.j.s.h.AbstractHandler - No Server set for WebjarHandler@630d1b2f{STARTING}
-2020-11-04 20:02:01.665 [main] WARN o.e.j.s.h.AbstractHandler - No Server set for WebjarHandler@58a120b0{STARTING}
-2020-11-04 20:02:01.702 [main] INFO o.e.j.s.Server - jetty-9.4.30.v20200611; built: 2020-06-11T12:34:51.929Z; git: 271836e4c1f4612f12b7bb13ef5a92a927634b0d; jvm 11.0.9+11-Ubuntu-0ubuntu1.18.04.1
-2020-11-04 20:02:01.732 [main] INFO o.e.j.s.AbstractConnector - Started ServerConnector@2a49fe{HTTP/1.1, (http/1.1)}{0.0.0.0:4567}
-2020-11-04 20:02:01.732 [main] INFO o.e.j.s.Server - Started @1025ms
-2020-11-04 20:02:01.733 [main] INFO o.v.c.a.GRPCEndpoint - Starting GRPC Endpoint at port 4570
-2020-11-04 20:02:01.753 [main] INFO o.v.c.s.m.PrometheusServer - Prometheus monitoring not enabled
-Nov 04, 2020 8:02:01 PM org.jline.utils.Log logr
+************************************** 06/11/2020 17:34:40 ***********************************
+2020-11-06 17:34:41.086 [main] INFO o.v.c.s.c.Config - Config file loaded!
+2020-11-06 17:34:41.244 [main] INFO o.v.c.c.d.c.CottontailWrapper - Connected to Cottontail in 138 ms at localhost:1865
+2020-11-06 17:34:41.644 [main] DEBUG o.v.c.c.d.d.r.TagReader - Tag Reader initialized in 354 ms
+2020-11-06 17:34:41.670 [main] INFO o.e.j.u.log - Logging initialized @1125ms to org.eclipse.jetty.util.log.Slf4jLog
+2020-11-06 17:34:41.720 [main] WARN o.e.j.s.h.AbstractHandler - No Server set for WebjarHandler@2df3c564{STARTING}
+2020-11-06 17:34:41.737 [main] WARN o.e.j.s.h.AbstractHandler - No Server set for WebjarHandler@54aca26f{STARTING}
+2020-11-06 17:34:41.772 [main] INFO o.e.j.s.Server - jetty-9.4.30.v20200611; built: 2020-06-11T12:34:51.929Z; git: 271836e4c1f4612f12b7bb13ef5a92a927634b0d; jvm 11.0.9+11-Ubuntu-0ubuntu1.18.04.1
+2020-11-06 17:34:41.811 [main] INFO o.e.j.s.AbstractConnector - Started ServerConnector@982bb90{HTTP/1.1, (http/1.1)}{0.0.0.0:4567}
+2020-11-06 17:34:41.812 [main] INFO o.e.j.s.Server - Started @1268ms
+2020-11-06 17:34:41.812 [main] INFO o.v.c.a.GRPCEndpoint - Starting GRPC Endpoint at port 4570
+2020-11-06 17:34:41.835 [main] INFO o.v.c.s.m.PrometheusServer - Prometheus monitoring not enabled
+Nov 06, 2020 5:34:41 PM org.jline.utils.Log logr
 WARNING: Unable to create a system terminal, creating a dumb terminal (enable debug logging for more information)
 Welcome to the interactive Cineast CLI.
-cineast> 2020-11-04 20:02:02.799 [main] INFO o.v.c.c.d.c.CottontailWrapper - Connected to Cottontail in 0 ms at localhost:1865
-2020-11-04 20:02:02.804 [main] INFO o.v.c.s.r.ExtractionPipeline - Warming up extraction pipeline....
-2020-11-04 20:02:02.812 [main] INFO o.v.c.s.r.ExtractionPipeline - Extraction pipeline is ready with 17 extractors.
-2020-11-04 20:02:03.072 [main] DEBUG o.v.c.s.r.ExtractionDispatcher - Registering Listener 
-2020-11-04 20:02:03.072 [main] DEBUG o.v.c.s.r.GenericExtractionItemHandler - Adding Listener 
-2020-11-04 20:02:03.072 [main] DEBUG o.v.c.s.r.ExtractionDispatcher - Registering Listener TreeWalkContainerIteratorProvider
-2020-11-04 20:02:03.072 [main] DEBUG o.v.c.s.r.GenericExtractionItemHandler - Adding Listener TreeWalkContainerIteratorProvider
-2020-11-04 20:02:03.073 [extraction-file-handler-thread] INFO o.v.c.s.r.GenericExtractionItemHandler - Starting extraction
-File input path length : 1000
-2020-11-04 20:02:03.074 [extraction-file-handler-thread] DEBUG o.v.c.s.r.p.TreeWalkContainerIteratorProvider - Next path: /local/home/cribin/Documents/AestheticsBackup/Datasets/ava_large_dataset/extracted_images/images/2_1, base /local/home/cribin/Documents/AestheticsBackup/Datasets/ava_large_dataset/extracted_images/images/2_1, res 
-2020-11-04 20:02:03.075 [extraction-file-handler-thread] DEBUG o.v.c.s.r.GenericExtractionItemHandler - Not processing directory /local/home/cribin/Documents/AestheticsBackup/Datasets/ava_large_dataset/extracted_images/images/2_1. Its content might be processed, but the directory itself is only processed for IMAGE_SEQUENCES. If you wish to use those, please specify the type explicitly in the extraction config.
-2020-11-04 20:02:03.075 [extraction-file-handler-thread] DEBUG o.v.c.s.r.p.TreeWalkContainerIteratorProvider - Next path: /local/home/cribin/Documents/AestheticsBackup/Datasets/ava_large_dataset/extracted_images/images/2_1/124962.jpg, base /local/home/cribin/Documents/AestheticsBackup/Datasets/ava_large_dataset/extracted_images/images/2_1, res 124962.jpg
-2020-11-04 20:02:03.076 [extraction-file-handler-thread] INFO o.v.c.s.r.GenericExtractionItemHandler - Processing path ExtractionItemContainer{object={"objectId":null,"name":"124962.jpg","path":"124962.jpg","exists":false,"mediatypeId":99,"contentURL":""}, metadata=[], path=/local/home/cribin/Documents/AestheticsBackup/Datasets/ava_large_dataset/extracted_images/images/2_1/124962.jpg} and mediatype IMAGE
+cineast> Setting up basic entities...
+2020-11-06 17:34:54.961 [main] WARN o.v.c.c.d.c.CottontailWrapper - Entity cineast_multimediaobject was not created because it already exists
+2020-11-06 17:34:54.975 [main] WARN o.v.c.c.d.c.CottontailWrapper - Index on cineast_multimediaobject.[objectid] was not created because it already exists
+io.grpc.StatusRuntimeException: ALREADY_EXISTS: Index 'cineast.cineast_multimediaobject.index-hash_uq-cineast_cineast_multimediaobject_objectid' does already exist!
+	at io.grpc.stub.ClientCalls.toStatusRuntimeException(ClientCalls.java:235)
+	at io.grpc.stub.ClientCalls.getUnchecked(ClientCalls.java:216)
+	at io.grpc.stub.ClientCalls.blockingUnaryCall(ClientCalls.java:141)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$CottonDDLBlockingStub.createIndex(CottonDDLGrpc.java:829)
+	at org.vitrivr.cineast.core.db.cottontaildb.CottontailWrapper.createIndexBlocking(CottontailWrapper.java:108)
+	at org.vitrivr.cineast.core.db.cottontaildb.CottontailEntityCreator.createIndex(CottontailEntityCreator.java:135)
+	at org.vitrivr.cineast.core.db.cottontaildb.CottontailEntityCreator.createMultiMediaObjectsEntity(CottontailEntityCreator.java:82)
+	at org.vitrivr.cineast.standalone.cli.DatabaseSetupCommand.doSetup(DatabaseSetupCommand.java:106)
+	at org.vitrivr.cineast.standalone.cli.DatabaseSetupCommand.run(DatabaseSetupCommand.java:83)
+	at org.vitrivr.cineast.standalone.util.CLI.start(CLI.java:92)
+	at org.vitrivr.cineast.api.Main.main(Main.java:41)
+2020-11-06 17:34:54.983 [main] WARN o.v.c.c.d.c.CottontailWrapper - Entity cineast_metadata was not created because it already exists
+2020-11-06 17:34:54.990 [main] WARN o.v.c.c.d.c.CottontailWrapper - Index on cineast_metadata.[objectid] was not created because it already exists
+io.grpc.StatusRuntimeException: ALREADY_EXISTS: Index 'cineast.cineast_metadata.index-hash-cineast_cineast_metadata_objectid' does already exist!
+	at io.grpc.stub.ClientCalls.toStatusRuntimeException(ClientCalls.java:235)
+	at io.grpc.stub.ClientCalls.getUnchecked(ClientCalls.java:216)
+	at io.grpc.stub.ClientCalls.blockingUnaryCall(ClientCalls.java:141)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$CottonDDLBlockingStub.createIndex(CottonDDLGrpc.java:829)
+	at org.vitrivr.cineast.core.db.cottontaildb.CottontailWrapper.createIndexBlocking(CottontailWrapper.java:108)
+	at org.vitrivr.cineast.core.db.cottontaildb.CottontailEntityCreator.createIndex(CottontailEntityCreator.java:135)
+	at org.vitrivr.cineast.core.db.cottontaildb.CottontailEntityCreator.createMetadataEntity(CottontailEntityCreator.java:104)
+	at org.vitrivr.cineast.standalone.cli.DatabaseSetupCommand.doSetup(DatabaseSetupCommand.java:107)
+	at org.vitrivr.cineast.standalone.cli.DatabaseSetupCommand.run(DatabaseSetupCommand.java:83)
+	at org.vitrivr.cineast.standalone.util.CLI.start(CLI.java:92)
+	at org.vitrivr.cineast.api.Main.main(Main.java:41)
+2020-11-06 17:34:54.993 [main] WARN o.v.c.c.d.c.CottontailWrapper - Entity cineast_segmentmetadata was not created because it already exists
+2020-11-06 17:34:55.001 [main] WARN o.v.c.c.d.c.CottontailWrapper - Index on cineast_segmentmetadata.[segmentid] was not created because it already exists
+io.grpc.StatusRuntimeException: ALREADY_EXISTS: Index 'cineast.cineast_segmentmetadata.index-hash-cineast_cineast_segmentmetadata_segmentid' does already exist!
+	at io.grpc.stub.ClientCalls.toStatusRuntimeException(ClientCalls.java:235)
+	at io.grpc.stub.ClientCalls.getUnchecked(ClientCalls.java:216)
+	at io.grpc.stub.ClientCalls.blockingUnaryCall(ClientCalls.java:141)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$CottonDDLBlockingStub.createIndex(CottonDDLGrpc.java:829)
+	at org.vitrivr.cineast.core.db.cottontaildb.CottontailWrapper.createIndexBlocking(CottontailWrapper.java:108)
+	at org.vitrivr.cineast.core.db.cottontaildb.CottontailEntityCreator.createIndex(CottontailEntityCreator.java:135)
+	at org.vitrivr.cineast.core.db.cottontaildb.CottontailEntityCreator.createSegmentMetadataEntity(CottontailEntityCreator.java:124)
+	at org.vitrivr.cineast.standalone.cli.DatabaseSetupCommand.doSetup(DatabaseSetupCommand.java:108)
+	at org.vitrivr.cineast.standalone.cli.DatabaseSetupCommand.run(DatabaseSetupCommand.java:83)
+	at org.vitrivr.cineast.standalone.util.CLI.start(CLI.java:92)
+	at org.vitrivr.cineast.api.Main.main(Main.java:41)
+2020-11-06 17:34:55.005 [main] WARN o.v.c.c.d.c.CottontailWrapper - Entity cineast_segment was not created because it already exists
+2020-11-06 17:34:55.014 [main] WARN o.v.c.c.d.c.CottontailWrapper - Index on cineast_segment.[segmentid] was not created because it already exists
+io.grpc.StatusRuntimeException: ALREADY_EXISTS: Index 'cineast.cineast_segment.index-hash_uq-cineast_cineast_segment_segmentid' does already exist!
+	at io.grpc.stub.ClientCalls.toStatusRuntimeException(ClientCalls.java:235)
+	at io.grpc.stub.ClientCalls.getUnchecked(ClientCalls.java:216)
+	at io.grpc.stub.ClientCalls.blockingUnaryCall(ClientCalls.java:141)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$CottonDDLBlockingStub.createIndex(CottonDDLGrpc.java:829)
+	at org.vitrivr.cineast.core.db.cottontaildb.CottontailWrapper.createIndexBlocking(CottontailWrapper.java:108)
+	at org.vitrivr.cineast.core.db.cottontaildb.CottontailEntityCreator.createIndex(CottontailEntityCreator.java:135)
+	at org.vitrivr.cineast.core.db.cottontaildb.CottontailEntityCreator.createSegmentEntity(CottontailEntityCreator.java:158)
+	at org.vitrivr.cineast.standalone.cli.DatabaseSetupCommand.doSetup(DatabaseSetupCommand.java:109)
+	at org.vitrivr.cineast.standalone.cli.DatabaseSetupCommand.run(DatabaseSetupCommand.java:83)
+	at org.vitrivr.cineast.standalone.util.CLI.start(CLI.java:92)
+	at org.vitrivr.cineast.api.Main.main(Main.java:41)
+2020-11-06 17:34:55.018 [main] WARN o.v.c.c.d.c.CottontailWrapper - Index on cineast_segment.[objectid] was not created because it already exists
+io.grpc.StatusRuntimeException: ALREADY_EXISTS: Index 'cineast.cineast_segment.index-hash-cineast_cineast_segment_objectid' does already exist!
+	at io.grpc.stub.ClientCalls.toStatusRuntimeException(ClientCalls.java:235)
+	at io.grpc.stub.ClientCalls.getUnchecked(ClientCalls.java:216)
+	at io.grpc.stub.ClientCalls.blockingUnaryCall(ClientCalls.java:141)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$CottonDDLBlockingStub.createIndex(CottonDDLGrpc.java:829)
+	at org.vitrivr.cineast.core.db.cottontaildb.CottontailWrapper.createIndexBlocking(CottontailWrapper.java:108)
+	at org.vitrivr.cineast.core.db.cottontaildb.CottontailEntityCreator.createIndex(CottontailEntityCreator.java:135)
+	at org.vitrivr.cineast.core.db.cottontaildb.CottontailEntityCreator.createSegmentEntity(CottontailEntityCreator.java:159)
+	at org.vitrivr.cineast.standalone.cli.DatabaseSetupCommand.doSetup(DatabaseSetupCommand.java:109)
+	at org.vitrivr.cineast.standalone.cli.DatabaseSetupCommand.run(DatabaseSetupCommand.java:83)
+	at org.vitrivr.cineast.standalone.util.CLI.start(CLI.java:92)
+	at org.vitrivr.cineast.api.Main.main(Main.java:41)
+2020-11-06 17:34:55.021 [main] WARN o.v.c.c.d.c.CottontailWrapper - Entity cineast_tags was not created because it already exists
+2020-11-06 17:34:55.025 [main] WARN o.v.c.c.d.c.CottontailWrapper - Index on cineast_tags.[id] was not created because it already exists
+io.grpc.StatusRuntimeException: ALREADY_EXISTS: Index 'cineast.cineast_tags.index-hash_uq-cineast_cineast_tags_id' does already exist!
+	at io.grpc.stub.ClientCalls.toStatusRuntimeException(ClientCalls.java:235)
+	at io.grpc.stub.ClientCalls.getUnchecked(ClientCalls.java:216)
+	at io.grpc.stub.ClientCalls.blockingUnaryCall(ClientCalls.java:141)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$CottonDDLBlockingStub.createIndex(CottonDDLGrpc.java:829)
+	at org.vitrivr.cineast.core.db.cottontaildb.CottontailWrapper.createIndexBlocking(CottontailWrapper.java:108)
+	at org.vitrivr.cineast.core.db.cottontaildb.CottontailEntityCreator.createIndex(CottontailEntityCreator.java:135)
+	at org.vitrivr.cineast.core.db.cottontaildb.CottontailEntityCreator.createTagEntity(CottontailEntityCreator.java:58)
+	at org.vitrivr.cineast.standalone.cli.DatabaseSetupCommand.doSetup(DatabaseSetupCommand.java:110)
+	at org.vitrivr.cineast.standalone.cli.DatabaseSetupCommand.run(DatabaseSetupCommand.java:83)
+	at org.vitrivr.cineast.standalone.util.CLI.start(CLI.java:92)
+	at org.vitrivr.cineast.api.Main.main(Main.java:41)
+2020-11-06 17:34:55.029 [main] WARN o.v.c.c.d.c.CottontailWrapper - Index on cineast_tags.[name] was not created because it already exists
+io.grpc.StatusRuntimeException: ALREADY_EXISTS: Index 'cineast.cineast_tags.index-hash-cineast_cineast_tags_name' does already exist!
+	at io.grpc.stub.ClientCalls.toStatusRuntimeException(ClientCalls.java:235)
+	at io.grpc.stub.ClientCalls.getUnchecked(ClientCalls.java:216)
+	at io.grpc.stub.ClientCalls.blockingUnaryCall(ClientCalls.java:141)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$CottonDDLBlockingStub.createIndex(CottonDDLGrpc.java:829)
+	at org.vitrivr.cineast.core.db.cottontaildb.CottontailWrapper.createIndexBlocking(CottontailWrapper.java:108)
+	at org.vitrivr.cineast.core.db.cottontaildb.CottontailEntityCreator.createIndex(CottontailEntityCreator.java:135)
+	at org.vitrivr.cineast.core.db.cottontaildb.CottontailEntityCreator.createTagEntity(CottontailEntityCreator.java:59)
+	at org.vitrivr.cineast.standalone.cli.DatabaseSetupCommand.doSetup(DatabaseSetupCommand.java:110)
+	at org.vitrivr.cineast.standalone.cli.DatabaseSetupCommand.run(DatabaseSetupCommand.java:83)
+	at org.vitrivr.cineast.standalone.util.CLI.start(CLI.java:92)
+	at org.vitrivr.cineast.api.Main.main(Main.java:41)
+2020-11-06 17:34:55.034 [main] WARN o.v.c.c.d.c.CottontailWrapper - Index on cineast_tags.[name] was not created because it already exists
+io.grpc.StatusRuntimeException: ALREADY_EXISTS: Index 'cineast.cineast_tags.index-lucene-cineast_cineast_tags_name' does already exist!
+	at io.grpc.stub.ClientCalls.toStatusRuntimeException(ClientCalls.java:235)
+	at io.grpc.stub.ClientCalls.getUnchecked(ClientCalls.java:216)
+	at io.grpc.stub.ClientCalls.blockingUnaryCall(ClientCalls.java:141)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$CottonDDLBlockingStub.createIndex(CottonDDLGrpc.java:829)
+	at org.vitrivr.cineast.core.db.cottontaildb.CottontailWrapper.createIndexBlocking(CottontailWrapper.java:108)
+	at org.vitrivr.cineast.core.db.cottontaildb.CottontailEntityCreator.createIndex(CottontailEntityCreator.java:135)
+	at org.vitrivr.cineast.core.db.cottontaildb.CottontailEntityCreator.createTagEntity(CottontailEntityCreator.java:60)
+	at org.vitrivr.cineast.standalone.cli.DatabaseSetupCommand.doSetup(DatabaseSetupCommand.java:110)
+	at org.vitrivr.cineast.standalone.cli.DatabaseSetupCommand.run(DatabaseSetupCommand.java:83)
+	at org.vitrivr.cineast.standalone.util.CLI.start(CLI.java:92)
+	at org.vitrivr.cineast.api.Main.main(Main.java:41)
+...done
+Setting up retriever classes...
+Creating entity for AverageColorARP44
+2020-11-06 17:34:55.040 [main] WARN o.v.c.c.d.c.CottontailWrapper - Entity features_AverageColorARP44 was not created because it already exists
+Creating entity for MedianColorGrid8
+2020-11-06 17:34:55.044 [main] WARN o.v.c.c.d.c.CottontailWrapper - Entity features_MedianColorGrid8 was not created because it already exists
+Creating entity for EHD
+2020-11-06 17:34:55.047 [main] WARN o.v.c.c.d.c.CottontailWrapper - Entity features_EHD was not created because it already exists
+Creating entity for AverageColorGrid8
+2020-11-06 17:34:55.051 [main] WARN o.v.c.c.d.c.CottontailWrapper - Entity features_AverageColorGrid8 was not created because it already exists
+Creating entity for AverageFuzzyHist
+2020-11-06 17:34:55.055 [main] WARN o.v.c.c.d.c.CottontailWrapper - Entity features_AverageFuzzyHist was not created because it already exists
+Creating entity for EdgeGrid16
+2020-11-06 17:34:55.059 [main] WARN o.v.c.c.d.c.CottontailWrapper - Entity features_EdgeGrid16 was not created because it already exists
+Creating entity for HPCP12Shingle
+2020-11-06 17:34:55.062 [main] WARN o.v.c.c.d.c.CottontailWrapper - Entity features_hpcp12shingle was not created because it already exists
+Creating entity for AverageColorCLD
+2020-11-06 17:34:55.066 [main] WARN o.v.c.c.d.c.CottontailWrapper - Entity features_AverageColorCLD was not created because it already exists
+Creating entity for AverageColorGrid8Reduced15
+2020-11-06 17:34:55.069 [main] WARN o.v.c.c.d.c.CottontailWrapper - Entity features_AverageColorGrid8Reduced15 was not created because it already exists
+Creating entity for FacialEmotionExtractor
+2020-11-06 17:34:55.072 [main] WARN o.v.c.c.d.c.CottontailWrapper - Entity features_facialEmotion was not created because it already exists
+Creating entity for AverageColorRaster
+2020-11-06 17:34:55.083 [main] WARN o.v.c.c.d.c.CottontailWrapper - Entity features_AverageColorRaster was not created because it already exists
+Creating entity for EdgeARP88
+2020-11-06 17:34:55.087 [main] WARN o.v.c.c.d.c.CottontailWrapper - Entity features_EdgeARP88 was not created because it already exists
+Creating entity for AverageColor
+2020-11-06 17:34:55.091 [main] WARN o.v.c.c.d.c.CottontailWrapper - Entity features_AverageColor was not created because it already exists
+Creating entity for MedianColor
+2020-11-06 17:34:55.094 [main] WARN o.v.c.c.d.c.CottontailWrapper - Entity features_MedianColor was not created because it already exists
+Creating entity for CLD
+2020-11-06 17:34:55.099 [main] WARN o.v.c.c.d.c.CottontailWrapper - Entity features_CLD was not created because it already exists
+...done
+Setup complete!
+cineast> 2020-11-06 17:34:55.114 [main] INFO o.v.c.c.d.c.CottontailWrapper - Connected to Cottontail in 0 ms at localhost:1865
+2020-11-06 17:34:55.117 [main] INFO o.v.c.s.r.ExtractionPipeline - Warming up extraction pipeline....
+2020-11-06 17:34:55.120 [main] INFO o.v.c.s.r.ExtractionPipeline - Extraction pipeline is ready with 16 extractors.
+2020-11-06 17:34:55.207 [main] DEBUG o.v.c.s.r.ExtractionDispatcher - Registering Listener 
+2020-11-06 17:34:55.208 [main] DEBUG o.v.c.s.r.GenericExtractionItemHandler - Adding Listener 
+2020-11-06 17:34:55.208 [main] DEBUG o.v.c.s.r.ExtractionDispatcher - Registering Listener TreeWalkContainerIteratorProvider
+2020-11-06 17:34:55.208 [main] DEBUG o.v.c.s.r.GenericExtractionItemHandler - Adding Listener TreeWalkContainerIteratorProvider
+2020-11-06 17:34:55.208 [extraction-file-handler-thread] INFO o.v.c.s.r.GenericExtractionItemHandler - Starting extraction
+File input path length : 1
+2020-11-06 17:34:55.209 [extraction-file-handler-thread] DEBUG o.v.c.s.r.p.TreeWalkContainerIteratorProvider - Next path: /local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/content-storage-test/content-base/import_4, base /local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/content-storage-test/content-base/import_4, res 
+2020-11-06 17:34:55.211 [extraction-file-handler-thread] DEBUG o.v.c.s.r.GenericExtractionItemHandler - Not processing directory /local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/content-storage-test/content-base/import_4. Its content might be processed, but the directory itself is only processed for IMAGE_SEQUENCES. If you wish to use those, please specify the type explicitly in the extraction config.
+2020-11-06 17:34:55.211 [extraction-file-handler-thread] DEBUG o.v.c.s.r.p.TreeWalkContainerIteratorProvider - Next path: /local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/content-storage-test/content-base/import_4/5245.jpg, base /local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/content-storage-test/content-base/import_4, res 5245.jpg
+2020-11-06 17:34:55.212 [extraction-file-handler-thread] INFO o.v.c.s.r.GenericExtractionItemHandler - Processing path ExtractionItemContainer{object={"objectId":null,"name":"5245.jpg","path":"5245.jpg","exists":false,"mediatypeId":99,"contentURL":""}, metadata=[], path=/local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/content-storage-test/content-base/import_4/5245.jpg} and mediatype IMAGE
+2020-11-06 17:34:55.548 [Thread-6] INFO o.v.c.s.r.ExtractionPipeline - Segment i_pjNjEwELl1anX34f_1 is being handed to the extraction pipeline.
+2020-11-06 17:34:55.551 [Thread-6] DEBUG o.v.c.s.r.ExtractionPipeline - Submitted segment i_pjNjEwELl1anX34f_1 for feature AverageColor
+2020-11-06 17:34:55.552 [pool-4-thread-1] DEBUG o.v.c.s.r.ExtractionTask - Starting AverageColor on segmentId i_pjNjEwELl1anX34f_1
+2020-11-06 17:34:55.552 [Thread-6] DEBUG o.v.c.s.r.ExtractionPipeline - Submitted segment i_pjNjEwELl1anX34f_1 for feature AverageColorARP44
+2020-11-06 17:34:55.552 [pool-4-thread-2] DEBUG o.v.c.s.r.ExtractionTask - Starting AverageColorARP44 on segmentId i_pjNjEwELl1anX34f_1
+2020-11-06 17:34:55.552 [Thread-6] DEBUG o.v.c.s.r.ExtractionPipeline - Submitted segment i_pjNjEwELl1anX34f_1 for feature AverageColorCLD
+2020-11-06 17:34:55.553 [pool-4-thread-3] DEBUG o.v.c.s.r.ExtractionTask - Starting AverageColorCLD on segmentId i_pjNjEwELl1anX34f_1
+2020-11-06 17:34:55.553 [Thread-6] DEBUG o.v.c.s.r.ExtractionPipeline - Submitted segment i_pjNjEwELl1anX34f_1 for feature AverageColorGrid8
+2020-11-06 17:34:55.553 [pool-4-thread-4] DEBUG o.v.c.s.r.ExtractionTask - Starting AverageColorGrid8 on segmentId i_pjNjEwELl1anX34f_1
+2020-11-06 17:34:55.553 [Thread-6] DEBUG o.v.c.s.r.ExtractionPipeline - Submitted segment i_pjNjEwELl1anX34f_1 for feature AverageColorRaster
+2020-11-06 17:34:55.554 [Thread-6] DEBUG o.v.c.s.r.ExtractionPipeline - Submitted segment i_pjNjEwELl1anX34f_1 for feature AverageFuzzyHist
+2020-11-06 17:34:55.554 [Thread-6] DEBUG o.v.c.s.r.ExtractionPipeline - Submitted segment i_pjNjEwELl1anX34f_1 for feature AverageColorGrid8Reduced15
+2020-11-06 17:34:55.554 [Thread-6] DEBUG o.v.c.s.r.ExtractionPipeline - Submitted segment i_pjNjEwELl1anX34f_1 for feature CLD
+2020-11-06 17:34:55.554 [Thread-6] DEBUG o.v.c.s.r.ExtractionPipeline - Submitted segment i_pjNjEwELl1anX34f_1 for feature EdgeARP88
+2020-11-06 17:34:55.555 [Thread-6] DEBUG o.v.c.s.r.ExtractionPipeline - Submitted segment i_pjNjEwELl1anX34f_1 for feature EdgeGrid16
+2020-11-06 17:34:55.555 [Thread-6] DEBUG o.v.c.s.r.ExtractionPipeline - Submitted segment i_pjNjEwELl1anX34f_1 for feature EHD
+2020-11-06 17:34:55.555 [Thread-6] DEBUG o.v.c.s.r.ExtractionPipeline - Submitted segment i_pjNjEwELl1anX34f_1 for feature HPCP12Shingle
+2020-11-06 17:34:55.555 [Thread-6] DEBUG o.v.c.s.r.ExtractionPipeline - Submitted segment i_pjNjEwELl1anX34f_1 for feature MedianColor
+2020-11-06 17:34:55.555 [Thread-6] DEBUG o.v.c.s.r.ExtractionPipeline - Submitted segment i_pjNjEwELl1anX34f_1 for feature MedianColorGrid8
+2020-11-06 17:34:55.610 [pool-4-thread-1] DEBUG o.v.c.s.r.ExtractionTask - Finished AverageColor on segmentID i_pjNjEwELl1anX34f_1 in 45 ms
+2020-11-06 17:34:55.611 [Thread-6] DEBUG o.v.c.s.r.ExtractionPipeline - Submitted segment i_pjNjEwELl1anX34f_1 for feature FacialEmotionExtractor
+2020-11-06 17:34:55.611 [pool-4-thread-1] DEBUG o.v.c.s.r.ExtractionTask - Starting AverageColorRaster on segmentId i_pjNjEwELl1anX34f_1
+2020-11-06 17:34:55.659 [pool-4-thread-3] DEBUG o.v.c.s.r.ExtractionTask - Finished AverageColorCLD on segmentID i_pjNjEwELl1anX34f_1 in 106 ms
+2020-11-06 17:34:55.659 [Thread-6] DEBUG o.v.c.s.r.ExtractionPipeline - Submitted segment i_pjNjEwELl1anX34f_1 for feature ShotThumbnailsExporter
+2020-11-06 17:34:55.659 [pool-4-thread-3] DEBUG o.v.c.s.r.ExtractionTask - Starting AverageFuzzyHist on segmentId i_pjNjEwELl1anX34f_1
+2020-11-06 17:34:55.716 [pool-4-thread-1] DEBUG o.v.c.s.r.ExtractionTask - Finished AverageColorRaster on segmentID i_pjNjEwELl1anX34f_1 in 105 ms
+2020-11-06 17:34:55.717 [pool-4-thread-1] DEBUG o.v.c.s.r.ExtractionTask - Starting AverageColorGrid8Reduced15 on segmentId i_pjNjEwELl1anX34f_1
+2020-11-06 17:34:55.738 [pool-4-thread-4] DEBUG o.v.c.s.r.ExtractionTask - Finished AverageColorGrid8 on segmentID i_pjNjEwELl1anX34f_1 in 184 ms
+2020-11-06 17:34:55.738 [pool-4-thread-4] DEBUG o.v.c.s.r.ExtractionTask - Starting CLD on segmentId i_pjNjEwELl1anX34f_1
+2020-11-06 17:34:55.759 [pool-4-thread-4] DEBUG o.v.c.s.r.ExtractionTask - Finished CLD on segmentID i_pjNjEwELl1anX34f_1 in 21 ms
+2020-11-06 17:34:55.760 [pool-4-thread-4] DEBUG o.v.c.s.r.ExtractionTask - Starting EdgeARP88 on segmentId i_pjNjEwELl1anX34f_1
+2020-11-06 17:34:55.845 [pool-4-thread-3] DEBUG o.v.c.s.r.ExtractionTask - Finished AverageFuzzyHist on segmentID i_pjNjEwELl1anX34f_1 in 186 ms
+2020-11-06 17:34:55.845 [pool-4-thread-3] DEBUG o.v.c.s.r.ExtractionTask - Starting EdgeGrid16 on segmentId i_pjNjEwELl1anX34f_1
+2020-11-06 17:34:55.856 [pool-4-thread-2] DEBUG o.v.c.s.r.ExtractionTask - Finished AverageColorARP44 on segmentID i_pjNjEwELl1anX34f_1 in 304 ms
+2020-11-06 17:34:55.857 [pool-4-thread-2] DEBUG o.v.c.s.r.ExtractionTask - Starting EHD on segmentId i_pjNjEwELl1anX34f_1
+2020-11-06 17:34:55.913 [pool-4-thread-2] DEBUG o.v.c.s.r.ExtractionTask - Finished EHD on segmentID i_pjNjEwELl1anX34f_1 in 55 ms
+2020-11-06 17:34:55.913 [pool-4-thread-2] DEBUG o.v.c.s.r.ExtractionTask - Starting HPCP12Shingle on segmentId i_pjNjEwELl1anX34f_1
+2020-11-06 17:34:55.913 [pool-4-thread-1] DEBUG o.v.c.s.r.ExtractionTask - Finished AverageColorGrid8Reduced15 on segmentID i_pjNjEwELl1anX34f_1 in 196 ms
+2020-11-06 17:34:55.914 [pool-4-thread-1] DEBUG o.v.c.s.r.ExtractionTask - Starting MedianColor on segmentId i_pjNjEwELl1anX34f_1
+2020-11-06 17:34:55.948 [pool-4-thread-2] DEBUG o.v.c.s.r.ExtractionTask - Finished HPCP12Shingle on segmentID i_pjNjEwELl1anX34f_1 in 35 ms
+2020-11-06 17:34:55.948 [pool-4-thread-2] DEBUG o.v.c.s.r.ExtractionTask - Starting MedianColorGrid8 on segmentId i_pjNjEwELl1anX34f_1
+2020-11-06 17:34:55.986 [pool-4-thread-1] DEBUG o.v.c.s.r.ExtractionTask - Finished MedianColor on segmentID i_pjNjEwELl1anX34f_1 in 72 ms
+2020-11-06 17:34:55.986 [pool-4-thread-1] DEBUG o.v.c.s.r.ExtractionTask - Starting FacialEmotionExtractor on segmentId i_pjNjEwELl1anX34f_1
+2020-11-06 17:34:56.006 [pool-4-thread-3] DEBUG o.v.c.s.r.ExtractionTask - Finished EdgeGrid16 on segmentID i_pjNjEwELl1anX34f_1 in 160 ms
+2020-11-06 17:34:56.007 [pool-4-thread-3] DEBUG o.v.c.s.r.ExtractionTask - Starting ShotThumbnailsExporter on segmentId i_pjNjEwELl1anX34f_1
+2020-11-06 17:34:56.013 [pool-4-thread-3] DEBUG o.v.c.s.r.ExtractionTask - Finished ShotThumbnailsExporter on segmentID i_pjNjEwELl1anX34f_1 in 6 ms
+2020-11-06 17:34:56.025 [pool-4-thread-4] DEBUG o.v.c.s.r.ExtractionTask - Finished EdgeARP88 on segmentID i_pjNjEwELl1anX34f_1 in 265 ms
+2020-11-06 17:34:56.074 [pool-4-thread-2] DEBUG o.v.c.s.r.ExtractionTask - Finished MedianColorGrid8 on segmentID i_pjNjEwELl1anX34f_1 in 126 ms
+Facial emotion for shotId: i_pjNjEwELl1anX34f_1 emotion: none
+2020-11-06 17:34:56.198 [pool-4-thread-1] DEBUG o.v.c.s.r.ExtractionTask - Finished FacialEmotionExtractor on segmentID i_pjNjEwELl1anX34f_1 in 211 ms
+2020-11-06 17:35:00.630 [extraction-file-handler-thread] ERROR o.v.c.s.r.GenericExtractionItemHandler - Pathprovider closed upon entrance, returning null
+2020-11-06 17:35:05.630 [extraction-file-handler-thread] INFO o.v.c.s.r.GenericExtractionItemHandler - File decoding and segmenting complete! Shutting down...
+2020-11-06 17:35:05.632 [extraction-file-handler-thread] INFO o.v.c.s.r.GenericExtractionItemHandler - Waiting for ExtractionPipeline to terminate! This could take a while.
+2020-11-06 17:35:05.663 [Thread-6] DEBUG o.v.c.s.r.ExtractionPipeline - Shutting down executor service
+2020-11-06 17:35:05.663 [Thread-6] DEBUG o.v.c.s.r.ExtractionPipeline - Waiting for termination of executor
+2020-11-06 17:35:06.056 [Thread-6] DEBUG o.v.c.s.r.ExtractionPipeline - All extractors termination, executor service terminated. Exiting shutdown.
+2020-11-06 17:35:06.057 [extraction-file-handler-thread] DEBUG o.v.c.s.r.GenericExtractionItemHandler - Closing & flushing all writers
+2020-11-06 17:35:06.057 [extraction-file-handler-thread] DEBUG o.v.c.s.r.GenericExtractionItemHandler - Shutdown complete
+Optimizing all entities for schema cineast in Cottontail
+2020-11-06 17:35:06.058 [extraction-file-handler-thread] INFO o.v.c.c.d.c.CottontailWrapper - Connected to Cottontail in 0 ms at localhost:1865
+Optimizing entity schema {
+  name: "cineast"
+}
+name: "cineast_multimediaobject"
+
+Optimizing entity schema {
+  name: "cineast"
+}
+name: "cineast_metadata"
+
+Optimizing entity schema {
+  name: "cineast"
+}
+name: "cineast_segmentmetadata"
+
+Optimizing entity schema {
+  name: "cineast"
+}
+name: "cineast_segment"
+
+Optimizing entity schema {
+  name: "cineast"
+}
+name: "cineast_tags"
+
+Optimizing entity schema {
+  name: "cineast"
+}
+name: "features_edgegrid16"
+
+Optimizing entity schema {
+  name: "cineast"
+}
+name: "features_edgearp88"
+
+Optimizing entity schema {
+  name: "cineast"
+}
+name: "features_averagecolorraster"
+
+Optimizing entity schema {
+  name: "cineast"
+}
+name: "features_averagefuzzyhist"
+
+Optimizing entity schema {
+  name: "cineast"
+}
+name: "features_averagecolor"
+
+Optimizing entity schema {
+  name: "cineast"
+}
+name: "features_averagecolorarp44"
+
+Optimizing entity schema {
+  name: "cineast"
+}
+name: "features_averagecolorgrid8"
+
+Optimizing entity schema {
+  name: "cineast"
+}
+name: "features_hpcp12shingle"
+
+Optimizing entity schema {
+  name: "cineast"
+}
+name: "features_averagecolorgrid8reduced15"
+
+Optimizing entity schema {
+  name: "cineast"
+}
+name: "features_cld"
+
+Optimizing entity schema {
+  name: "cineast"
+}
+name: "features_facialemotion"
+
+Optimizing entity schema {
+  name: "cineast"
+}
+name: "features_mediancolorgrid8"
+
+Optimizing entity schema {
+  name: "cineast"
+}
+name: "features_ehd"
+
+Optimizing entity schema {
+  name: "cineast"
+}
+name: "features_averagecolorcld"
+
+Optimizing entity schema {
+  name: "cineast"
+}
+name: "features_mediancolor"
+
+Finished optimizing all entities
+cineast> 2020-11-06 17:35:06.335 [main] INFO o.e.j.s.AbstractConnector - Stopped ServerConnector@982bb90{HTTP/1.1, (http/1.1)}{0.0.0.0:4567}
+2020-11-06 17:35:07.174 [main] INFO o.v.c.s.c.Config - Config file loaded!
+2020-11-06 17:35:07.289 [main] INFO o.v.c.c.d.c.CottontailWrapper - Connected to Cottontail in 98 ms at localhost:1865
+2020-11-06 17:35:07.485 [main] DEBUG o.v.c.c.d.d.r.TagReader - Tag Reader initialized in 159 ms
+2020-11-06 17:35:07.512 [main] INFO o.e.j.u.log - Logging initialized @833ms to org.eclipse.jetty.util.log.Slf4jLog
+2020-11-06 17:35:07.564 [main] WARN o.e.j.s.h.AbstractHandler - No Server set for WebjarHandler@2df3c564{STARTING}
+2020-11-06 17:35:07.583 [main] WARN o.e.j.s.h.AbstractHandler - No Server set for WebjarHandler@54aca26f{STARTING}
+2020-11-06 17:35:07.624 [main] INFO o.e.j.s.Server - jetty-9.4.30.v20200611; built: 2020-06-11T12:34:51.929Z; git: 271836e4c1f4612f12b7bb13ef5a92a927634b0d; jvm 11.0.9+11-Ubuntu-0ubuntu1.18.04.1
+2020-11-06 17:35:07.656 [main] INFO o.e.j.s.AbstractConnector - Started ServerConnector@982bb90{HTTP/1.1, (http/1.1)}{0.0.0.0:4567}
+2020-11-06 17:35:07.657 [main] INFO o.e.j.s.Server - Started @979ms
+2020-11-06 17:35:07.657 [main] INFO o.v.c.a.GRPCEndpoint - Starting GRPC Endpoint at port 4570
+2020-11-06 17:35:07.678 [main] INFO o.v.c.s.m.PrometheusServer - Prometheus monitoring not enabled
+Nov 06, 2020 5:35:07 PM org.jline.utils.Log logr
+WARNING: Unable to create a system terminal, creating a dumb terminal (enable debug logging for more information)
+Welcome to the interactive Cineast CLI.
+cineast> 

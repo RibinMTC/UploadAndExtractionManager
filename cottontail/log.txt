@@ -1,7 +1,616 @@
 
-************************************** 04/11/2020 20:02:00 ***********************************
-Exception in thread "main" org.vitrivr.cottontail.model.exceptions.DatabaseException: Failed to create Cottontail DB catalogue due to an IO exception: /content-storage
-	at org.vitrivr.cottontail.database.catalogue.Catalogue.initStore(Catalogue.kt:259)
-	at org.vitrivr.cottontail.database.catalogue.Catalogue.<init>(Catalogue.kt:59)
-	at org.vitrivr.cottontail.CottontailKt.startDB(Cottontail.kt:49)
-	at org.vitrivr.cottontail.CottontailKt.main(Cottontail.kt:38)
+************************************** 06/11/2020 17:34:40 ***********************************
+2020-11-06 17:34:41 INFO  CottontailGrpcServer:62 - Cottontail DB server is up and running at port 1865 ! Hop along...
+Nov 06, 2020 5:34:41 PM org.jline.utils.Log logr
+WARNING: Unable to create a system terminal, creating a dumb terminal (enable debug logging for more information)
+cottontaildb> 2020-11-06 17:34:41 TRACE CottonDQLService:41 - Parsing & binding query cin-735 took 132ms.
+2020-11-06 17:34:41 TRACE CottonDQLService:46 - Executing query cin-735 took 14ms.
+2020-11-06 17:34:41 TRACE CottonDQLService:153 - Position 0 of query cin-735 yielded no results.
+2020-11-06 17:34:41 INFO  CottonDQLService:52 - Query cin-735 took 149ms.
+Counting elements of entity cineast.cineast_multimediaobject
+2020-11-06 17:34:52 TRACE CottonDQLService:41 - Parsing & binding query 41e5224a-0f32-4e52-a2f7-c3fcbb6d51ac took 6ms.
+2020-11-06 17:34:52 TRACE CottonDQLService:46 - Executing query 41e5224a-0f32-4e52-a2f7-c3fcbb6d51ac took 5ms.
+2020-11-06 17:34:52 TRACE CottonDQLService:150 - Sending back 1 rows for position 0 of query 41e5224a-0f32-4e52-a2f7-c3fcbb6d51ac took 5ms.
+2020-11-06 17:34:52 INFO  CottonDQLService:52 - Query 41e5224a-0f32-4e52-a2f7-c3fcbb6d51ac took 17ms.
+data {
+  key: "warren.cineast.cineast_multimediaobject.count()"
+  value {
+    longData: 3
+  }
+}
+
+
+cottontaildb> 2020-11-06 17:34:54 TRACE CottonDDLService:98 - Creating entity cineast.cineast_multimediaobject...
+2020-11-06 17:34:54 ERROR CottonDDLService:119 - Error while creating entity 'cineast.cineast_multimediaobject'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$EntityAlreadyExistsException: Entity 'warren.cineast.cineast_multimediaobject' does already exist!
+	at org.vitrivr.cottontail.database.schema.Schema.createEntity(Schema.kt:124)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createEntity(CottonDDLService.kt:111)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1008)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:54 TRACE CottonDDLService:219 - Creating index index {
+  entity {
+    schema {
+      name: "cineast"
+    }
+    name: "cineast_multimediaobject"
+  }
+  name: "index-hash_uq-cineast_cineast_multimediaobject_objectid"
+  type: HASH_UQ
+}
+columns: "objectid"
+
+2020-11-06 17:34:54 ERROR CottonDDLService:251 - Error while creating index 'cineast.cineast_multimediaobject.index-hash_uq-cineast_cineast_multimediaobject_objectid'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$IndexAlreadyExistsException: Index 'warren.cineast.cineast_multimediaobject.index-hash_uq-cineast_cineast_multimediaobject_objectid' does already exist!
+	at org.vitrivr.cottontail.database.entity.Entity.createIndex(Entity.kt:187)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createIndex(CottonDDLService.kt:237)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1020)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:54 TRACE CottonDDLService:98 - Creating entity cineast.cineast_metadata...
+2020-11-06 17:34:54 ERROR CottonDDLService:119 - Error while creating entity 'cineast.cineast_metadata'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$EntityAlreadyExistsException: Entity 'warren.cineast.cineast_metadata' does already exist!
+	at org.vitrivr.cottontail.database.schema.Schema.createEntity(Schema.kt:124)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createEntity(CottonDDLService.kt:111)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1008)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:54 TRACE CottonDDLService:219 - Creating index index {
+  entity {
+    schema {
+      name: "cineast"
+    }
+    name: "cineast_metadata"
+  }
+  name: "index-hash-cineast_cineast_metadata_objectid"
+}
+columns: "objectid"
+
+2020-11-06 17:34:54 ERROR CottonDDLService:251 - Error while creating index 'cineast.cineast_metadata.index-hash-cineast_cineast_metadata_objectid'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$IndexAlreadyExistsException: Index 'warren.cineast.cineast_metadata.index-hash-cineast_cineast_metadata_objectid' does already exist!
+	at org.vitrivr.cottontail.database.entity.Entity.createIndex(Entity.kt:187)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createIndex(CottonDDLService.kt:237)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1020)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:54 TRACE CottonDDLService:98 - Creating entity cineast.cineast_segmentmetadata...
+2020-11-06 17:34:54 ERROR CottonDDLService:119 - Error while creating entity 'cineast.cineast_segmentmetadata'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$EntityAlreadyExistsException: Entity 'warren.cineast.cineast_segmentmetadata' does already exist!
+	at org.vitrivr.cottontail.database.schema.Schema.createEntity(Schema.kt:124)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createEntity(CottonDDLService.kt:111)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1008)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:54 TRACE CottonDDLService:219 - Creating index index {
+  entity {
+    schema {
+      name: "cineast"
+    }
+    name: "cineast_segmentmetadata"
+  }
+  name: "index-hash-cineast_cineast_segmentmetadata_segmentid"
+}
+columns: "segmentid"
+
+2020-11-06 17:34:54 ERROR CottonDDLService:251 - Error while creating index 'cineast.cineast_segmentmetadata.index-hash-cineast_cineast_segmentmetadata_segmentid'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$IndexAlreadyExistsException: Index 'warren.cineast.cineast_segmentmetadata.index-hash-cineast_cineast_segmentmetadata_segmentid' does already exist!
+	at org.vitrivr.cottontail.database.entity.Entity.createIndex(Entity.kt:187)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createIndex(CottonDDLService.kt:237)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1020)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:55 TRACE CottonDDLService:98 - Creating entity cineast.cineast_segment...
+2020-11-06 17:34:55 ERROR CottonDDLService:119 - Error while creating entity 'cineast.cineast_segment'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$EntityAlreadyExistsException: Entity 'warren.cineast.cineast_segment' does already exist!
+	at org.vitrivr.cottontail.database.schema.Schema.createEntity(Schema.kt:124)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createEntity(CottonDDLService.kt:111)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1008)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:55 TRACE CottonDDLService:219 - Creating index index {
+  entity {
+    schema {
+      name: "cineast"
+    }
+    name: "cineast_segment"
+  }
+  name: "index-hash_uq-cineast_cineast_segment_segmentid"
+  type: HASH_UQ
+}
+columns: "segmentid"
+
+2020-11-06 17:34:55 ERROR CottonDDLService:251 - Error while creating index 'cineast.cineast_segment.index-hash_uq-cineast_cineast_segment_segmentid'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$IndexAlreadyExistsException: Index 'warren.cineast.cineast_segment.index-hash_uq-cineast_cineast_segment_segmentid' does already exist!
+	at org.vitrivr.cottontail.database.entity.Entity.createIndex(Entity.kt:187)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createIndex(CottonDDLService.kt:237)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1020)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:55 TRACE CottonDDLService:219 - Creating index index {
+  entity {
+    schema {
+      name: "cineast"
+    }
+    name: "cineast_segment"
+  }
+  name: "index-hash-cineast_cineast_segment_objectid"
+}
+columns: "objectid"
+
+2020-11-06 17:34:55 ERROR CottonDDLService:251 - Error while creating index 'cineast.cineast_segment.index-hash-cineast_cineast_segment_objectid'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$IndexAlreadyExistsException: Index 'warren.cineast.cineast_segment.index-hash-cineast_cineast_segment_objectid' does already exist!
+	at org.vitrivr.cottontail.database.entity.Entity.createIndex(Entity.kt:187)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createIndex(CottonDDLService.kt:237)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1020)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:55 TRACE CottonDDLService:98 - Creating entity cineast.cineast_tags...
+2020-11-06 17:34:55 ERROR CottonDDLService:119 - Error while creating entity 'cineast.cineast_tags'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$EntityAlreadyExistsException: Entity 'warren.cineast.cineast_tags' does already exist!
+	at org.vitrivr.cottontail.database.schema.Schema.createEntity(Schema.kt:124)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createEntity(CottonDDLService.kt:111)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1008)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:55 TRACE CottonDDLService:219 - Creating index index {
+  entity {
+    schema {
+      name: "cineast"
+    }
+    name: "cineast_tags"
+  }
+  name: "index-hash_uq-cineast_cineast_tags_id"
+  type: HASH_UQ
+}
+columns: "id"
+
+2020-11-06 17:34:55 ERROR CottonDDLService:251 - Error while creating index 'cineast.cineast_tags.index-hash_uq-cineast_cineast_tags_id'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$IndexAlreadyExistsException: Index 'warren.cineast.cineast_tags.index-hash_uq-cineast_cineast_tags_id' does already exist!
+	at org.vitrivr.cottontail.database.entity.Entity.createIndex(Entity.kt:187)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createIndex(CottonDDLService.kt:237)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1020)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:55 TRACE CottonDDLService:219 - Creating index index {
+  entity {
+    schema {
+      name: "cineast"
+    }
+    name: "cineast_tags"
+  }
+  name: "index-hash-cineast_cineast_tags_name"
+}
+columns: "name"
+
+2020-11-06 17:34:55 ERROR CottonDDLService:251 - Error while creating index 'cineast.cineast_tags.index-hash-cineast_cineast_tags_name'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$IndexAlreadyExistsException: Index 'warren.cineast.cineast_tags.index-hash-cineast_cineast_tags_name' does already exist!
+	at org.vitrivr.cottontail.database.entity.Entity.createIndex(Entity.kt:187)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createIndex(CottonDDLService.kt:237)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1020)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:55 TRACE CottonDDLService:219 - Creating index index {
+  entity {
+    schema {
+      name: "cineast"
+    }
+    name: "cineast_tags"
+  }
+  name: "index-lucene-cineast_cineast_tags_name"
+  type: LUCENE
+}
+columns: "name"
+
+2020-11-06 17:34:55 ERROR CottonDDLService:251 - Error while creating index 'cineast.cineast_tags.index-lucene-cineast_cineast_tags_name'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$IndexAlreadyExistsException: Index 'warren.cineast.cineast_tags.index-lucene-cineast_cineast_tags_name' does already exist!
+	at org.vitrivr.cottontail.database.entity.Entity.createIndex(Entity.kt:187)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createIndex(CottonDDLService.kt:237)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1020)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:55 TRACE CottonDDLService:98 - Creating entity cineast.features_AverageColorARP44...
+2020-11-06 17:34:55 ERROR CottonDDLService:119 - Error while creating entity 'cineast.features_AverageColorARP44'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$EntityAlreadyExistsException: Entity 'warren.cineast.features_averagecolorarp44' does already exist!
+	at org.vitrivr.cottontail.database.schema.Schema.createEntity(Schema.kt:124)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createEntity(CottonDDLService.kt:111)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1008)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:55 TRACE CottonDDLService:98 - Creating entity cineast.features_MedianColorGrid8...
+2020-11-06 17:34:55 ERROR CottonDDLService:119 - Error while creating entity 'cineast.features_MedianColorGrid8'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$EntityAlreadyExistsException: Entity 'warren.cineast.features_mediancolorgrid8' does already exist!
+	at org.vitrivr.cottontail.database.schema.Schema.createEntity(Schema.kt:124)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createEntity(CottonDDLService.kt:111)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1008)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:55 TRACE CottonDDLService:98 - Creating entity cineast.features_EHD...
+2020-11-06 17:34:55 ERROR CottonDDLService:119 - Error while creating entity 'cineast.features_EHD'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$EntityAlreadyExistsException: Entity 'warren.cineast.features_ehd' does already exist!
+	at org.vitrivr.cottontail.database.schema.Schema.createEntity(Schema.kt:124)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createEntity(CottonDDLService.kt:111)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1008)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:55 TRACE CottonDDLService:98 - Creating entity cineast.features_AverageColorGrid8...
+2020-11-06 17:34:55 ERROR CottonDDLService:119 - Error while creating entity 'cineast.features_AverageColorGrid8'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$EntityAlreadyExistsException: Entity 'warren.cineast.features_averagecolorgrid8' does already exist!
+	at org.vitrivr.cottontail.database.schema.Schema.createEntity(Schema.kt:124)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createEntity(CottonDDLService.kt:111)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1008)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:55 TRACE CottonDDLService:98 - Creating entity cineast.features_AverageFuzzyHist...
+2020-11-06 17:34:55 ERROR CottonDDLService:119 - Error while creating entity 'cineast.features_AverageFuzzyHist'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$EntityAlreadyExistsException: Entity 'warren.cineast.features_averagefuzzyhist' does already exist!
+	at org.vitrivr.cottontail.database.schema.Schema.createEntity(Schema.kt:124)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createEntity(CottonDDLService.kt:111)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1008)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:55 TRACE CottonDDLService:98 - Creating entity cineast.features_EdgeGrid16...
+2020-11-06 17:34:55 ERROR CottonDDLService:119 - Error while creating entity 'cineast.features_EdgeGrid16'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$EntityAlreadyExistsException: Entity 'warren.cineast.features_edgegrid16' does already exist!
+	at org.vitrivr.cottontail.database.schema.Schema.createEntity(Schema.kt:124)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createEntity(CottonDDLService.kt:111)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1008)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:55 TRACE CottonDDLService:98 - Creating entity cineast.features_hpcp12shingle...
+2020-11-06 17:34:55 ERROR CottonDDLService:119 - Error while creating entity 'cineast.features_hpcp12shingle'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$EntityAlreadyExistsException: Entity 'warren.cineast.features_hpcp12shingle' does already exist!
+	at org.vitrivr.cottontail.database.schema.Schema.createEntity(Schema.kt:124)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createEntity(CottonDDLService.kt:111)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1008)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:55 TRACE CottonDDLService:98 - Creating entity cineast.features_AverageColorCLD...
+2020-11-06 17:34:55 ERROR CottonDDLService:119 - Error while creating entity 'cineast.features_AverageColorCLD'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$EntityAlreadyExistsException: Entity 'warren.cineast.features_averagecolorcld' does already exist!
+	at org.vitrivr.cottontail.database.schema.Schema.createEntity(Schema.kt:124)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createEntity(CottonDDLService.kt:111)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1008)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:55 TRACE CottonDDLService:98 - Creating entity cineast.features_AverageColorGrid8Reduced15...
+2020-11-06 17:34:55 ERROR CottonDDLService:119 - Error while creating entity 'cineast.features_AverageColorGrid8Reduced15'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$EntityAlreadyExistsException: Entity 'warren.cineast.features_averagecolorgrid8reduced15' does already exist!
+	at org.vitrivr.cottontail.database.schema.Schema.createEntity(Schema.kt:124)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createEntity(CottonDDLService.kt:111)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1008)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:55 TRACE CottonDDLService:98 - Creating entity cineast.features_facialEmotion...
+2020-11-06 17:34:55 ERROR CottonDDLService:119 - Error while creating entity 'cineast.features_facialEmotion'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$EntityAlreadyExistsException: Entity 'warren.cineast.features_facialemotion' does already exist!
+	at org.vitrivr.cottontail.database.schema.Schema.createEntity(Schema.kt:124)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createEntity(CottonDDLService.kt:111)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1008)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:55 TRACE CottonDDLService:98 - Creating entity cineast.features_AverageColorRaster...
+2020-11-06 17:34:55 ERROR CottonDDLService:119 - Error while creating entity 'cineast.features_AverageColorRaster'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$EntityAlreadyExistsException: Entity 'warren.cineast.features_averagecolorraster' does already exist!
+	at org.vitrivr.cottontail.database.schema.Schema.createEntity(Schema.kt:124)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createEntity(CottonDDLService.kt:111)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1008)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:55 TRACE CottonDDLService:98 - Creating entity cineast.features_EdgeARP88...
+2020-11-06 17:34:55 ERROR CottonDDLService:119 - Error while creating entity 'cineast.features_EdgeARP88'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$EntityAlreadyExistsException: Entity 'warren.cineast.features_edgearp88' does already exist!
+	at org.vitrivr.cottontail.database.schema.Schema.createEntity(Schema.kt:124)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createEntity(CottonDDLService.kt:111)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1008)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:55 TRACE CottonDDLService:98 - Creating entity cineast.features_AverageColor...
+2020-11-06 17:34:55 ERROR CottonDDLService:119 - Error while creating entity 'cineast.features_AverageColor'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$EntityAlreadyExistsException: Entity 'warren.cineast.features_averagecolor' does already exist!
+	at org.vitrivr.cottontail.database.schema.Schema.createEntity(Schema.kt:124)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createEntity(CottonDDLService.kt:111)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1008)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:55 TRACE CottonDDLService:98 - Creating entity cineast.features_MedianColor...
+2020-11-06 17:34:55 ERROR CottonDDLService:119 - Error while creating entity 'cineast.features_MedianColor'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$EntityAlreadyExistsException: Entity 'warren.cineast.features_mediancolor' does already exist!
+	at org.vitrivr.cottontail.database.schema.Schema.createEntity(Schema.kt:124)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createEntity(CottonDDLService.kt:111)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1008)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:55 TRACE CottonDDLService:98 - Creating entity cineast.features_CLD...
+2020-11-06 17:34:55 ERROR CottonDDLService:119 - Error while creating entity 'cineast.features_CLD'
+org.vitrivr.cottontail.model.exceptions.DatabaseException$EntityAlreadyExistsException: Entity 'warren.cineast.features_cld' does already exist!
+	at org.vitrivr.cottontail.database.schema.Schema.createEntity(Schema.kt:124)
+	at org.vitrivr.cottontail.server.grpc.services.CottonDDLService.createEntity(CottonDDLService.kt:111)
+	at org.vitrivr.cottontail.grpc.CottonDDLGrpc$MethodHandlers.invoke(CottonDDLGrpc.java:1008)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:818)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-11-06 17:34:55 TRACE CottonDQLService:41 - Parsing & binding query cin-852 took 5ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:46 - Executing query cin-852 took 2ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:153 - Position 0 of query cin-852 yielded no results.
+2020-11-06 17:34:55 INFO  CottonDQLService:52 - Query cin-852 took 9ms.
+2020-11-06 17:34:55 TRACE CottonDMLService:101 - Insert transaction d37c34af-b816-4e06-ad41-f4ee5bf1e9f7 was initiated by client.
+2020-11-06 17:34:55 TRACE CottonDMLService:196 - Insert transaction d37c34af-b816-4e06-ad41-f4ee5bf1e9f7 was committed by client (1 tuples inserted).
+2020-11-06 17:34:55 TRACE CottonDQLService:41 - Parsing & binding query cin-050 took 1ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:46 - Executing query cin-050 took 2ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:153 - Position 0 of query cin-050 yielded no results.
+2020-11-06 17:34:55 INFO  CottonDQLService:52 - Query cin-050 took 4ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:41 - Parsing & binding query cin-462 took 1ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:41 - Parsing & binding query cin-116 took 2ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:46 - Executing query cin-462 took 1ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:41 - Parsing & binding query cin-455 took 2ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:153 - Position 0 of query cin-462 yielded no results.
+2020-11-06 17:34:55 INFO  CottonDQLService:52 - Query cin-462 took 3ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:46 - Executing query cin-116 took 1ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:46 - Executing query cin-455 took 1ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:41 - Parsing & binding query cin-657 took 3ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:153 - Position 0 of query cin-455 yielded no results.
+2020-11-06 17:34:55 TRACE CottonDQLService:153 - Position 0 of query cin-116 yielded no results.
+2020-11-06 17:34:55 INFO  CottonDQLService:52 - Query cin-455 took 4ms.
+2020-11-06 17:34:55 INFO  CottonDQLService:52 - Query cin-116 took 4ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:46 - Executing query cin-657 took 1ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:153 - Position 0 of query cin-657 yielded no results.
+2020-11-06 17:34:55 INFO  CottonDQLService:52 - Query cin-657 took 5ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:41 - Parsing & binding query cin-157 took 2ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:46 - Executing query cin-157 took 1ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:153 - Position 0 of query cin-157 yielded no results.
+2020-11-06 17:34:55 INFO  CottonDQLService:52 - Query cin-157 took 3ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:41 - Parsing & binding query cin-077 took 1ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:46 - Executing query cin-077 took 1ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:153 - Position 0 of query cin-077 yielded no results.
+2020-11-06 17:34:55 INFO  CottonDQLService:52 - Query cin-077 took 3ms.
+2020-11-06 17:34:55 TRACE CottonDMLService:101 - Insert transaction af3007ea-b6ec-4830-8407-302002bb0e55 was initiated by client.
+2020-11-06 17:34:55 TRACE CottonDMLService:196 - Insert transaction af3007ea-b6ec-4830-8407-302002bb0e55 was committed by client (1 tuples inserted).
+2020-11-06 17:34:55 TRACE CottonDQLService:41 - Parsing & binding query cin-353 took 2ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:46 - Executing query cin-353 took 1ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:153 - Position 0 of query cin-353 yielded no results.
+2020-11-06 17:34:55 INFO  CottonDQLService:52 - Query cin-353 took 3ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:41 - Parsing & binding query cin-513 took 1ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:46 - Executing query cin-513 took 0ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:153 - Position 0 of query cin-513 yielded no results.
+2020-11-06 17:34:55 INFO  CottonDQLService:52 - Query cin-513 took 3ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:41 - Parsing & binding query cin-720 took 1ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:46 - Executing query cin-720 took 1ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:153 - Position 0 of query cin-720 yielded no results.
+2020-11-06 17:34:55 INFO  CottonDQLService:52 - Query cin-720 took 2ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:41 - Parsing & binding query cin-532 took 1ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:46 - Executing query cin-532 took 1ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:153 - Position 0 of query cin-532 yielded no results.
+2020-11-06 17:34:55 INFO  CottonDQLService:52 - Query cin-532 took 2ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:41 - Parsing & binding query cin-413 took 2ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:46 - Executing query cin-413 took 1ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:153 - Position 0 of query cin-413 yielded no results.
+2020-11-06 17:34:55 INFO  CottonDQLService:52 - Query cin-413 took 3ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:41 - Parsing & binding query cin-128 took 51ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:41 - Parsing & binding query cin-646 took 20ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:46 - Executing query cin-128 took 1ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:153 - Position 0 of query cin-128 yielded no results.
+2020-11-06 17:34:55 INFO  CottonDQLService:52 - Query cin-128 took 52ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:46 - Executing query cin-646 took 0ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:153 - Position 0 of query cin-646 yielded no results.
+2020-11-06 17:34:55 INFO  CottonDQLService:52 - Query cin-646 took 21ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:41 - Parsing & binding query cin-515 took 1ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:46 - Executing query cin-515 took 0ms.
+2020-11-06 17:34:55 TRACE CottonDQLService:153 - Position 0 of query cin-515 yielded no results.
+2020-11-06 17:34:55 INFO  CottonDQLService:52 - Query cin-515 took 2ms.
+2020-11-06 17:35:00 TRACE CottonDMLService:101 - Insert transaction 5214bf4e-f5ff-493a-acb2-f482766296bf was initiated by client.
+2020-11-06 17:35:00 TRACE CottonDMLService:196 - Insert transaction 5214bf4e-f5ff-493a-acb2-f482766296bf was committed by client (1 tuples inserted).
+2020-11-06 17:35:00 TRACE CottonDMLService:101 - Insert transaction 7de326d0-a2df-4079-9f1d-f66a0b0e8490 was initiated by client.
+2020-11-06 17:35:05 TRACE CottonDMLService:101 - Insert transaction 73621937-d220-499a-a02b-0c3739525c0e was initiated by client.
+2020-11-06 17:35:05 TRACE CottonDMLService:196 - Insert transaction 73621937-d220-499a-a02b-0c3739525c0e was committed by client (1 tuples inserted).
+2020-11-06 17:35:05 TRACE CottonDMLService:101 - Insert transaction 443e098c-1a9e-49de-ae03-1a9462e4a1b1 was initiated by client.
+2020-11-06 17:35:05 TRACE CottonDMLService:196 - Insert transaction 443e098c-1a9e-49de-ae03-1a9462e4a1b1 was committed by client (1 tuples inserted).
+2020-11-06 17:35:05 TRACE CottonDMLService:101 - Insert transaction c5dff9c0-f526-43c2-bc44-869f67cb0372 was initiated by client.
+2020-11-06 17:35:05 TRACE CottonDMLService:196 - Insert transaction c5dff9c0-f526-43c2-bc44-869f67cb0372 was committed by client (1 tuples inserted).
+2020-11-06 17:35:05 TRACE CottonDMLService:101 - Insert transaction d67d4b58-8aa5-45ce-833b-f611809efe44 was initiated by client.
+2020-11-06 17:35:05 TRACE CottonDMLService:196 - Insert transaction d67d4b58-8aa5-45ce-833b-f611809efe44 was committed by client (1 tuples inserted).
+2020-11-06 17:35:05 TRACE CottonDMLService:101 - Insert transaction b48b6f73-140e-4a2b-8cd1-66f75fbf6b8b was initiated by client.
+2020-11-06 17:35:05 TRACE CottonDMLService:196 - Insert transaction b48b6f73-140e-4a2b-8cd1-66f75fbf6b8b was committed by client (1 tuples inserted).
+2020-11-06 17:35:05 TRACE CottonDMLService:101 - Insert transaction 065af536-1594-4969-adb3-d8b0fe6923b3 was initiated by client.
+2020-11-06 17:35:05 TRACE CottonDMLService:196 - Insert transaction 065af536-1594-4969-adb3-d8b0fe6923b3 was committed by client (1 tuples inserted).
+2020-11-06 17:35:05 TRACE CottonDMLService:101 - Insert transaction adcc1290-e12c-4f80-9c85-56a1f9c064c0 was initiated by client.
+2020-11-06 17:35:05 TRACE CottonDMLService:196 - Insert transaction adcc1290-e12c-4f80-9c85-56a1f9c064c0 was committed by client (1 tuples inserted).
+2020-11-06 17:35:05 TRACE CottonDMLService:101 - Insert transaction 743659a1-369b-4dbf-a42e-1a1ca66402e9 was initiated by client.
+2020-11-06 17:35:05 TRACE CottonDMLService:196 - Insert transaction 743659a1-369b-4dbf-a42e-1a1ca66402e9 was committed by client (1 tuples inserted).
+2020-11-06 17:35:05 TRACE CottonDMLService:101 - Insert transaction d5deae5a-7f7f-49f9-a0e1-16a05b5a27fa was initiated by client.
+2020-11-06 17:35:05 TRACE CottonDMLService:196 - Insert transaction d5deae5a-7f7f-49f9-a0e1-16a05b5a27fa was committed by client (1 tuples inserted).
+2020-11-06 17:35:05 TRACE CottonDMLService:101 - Insert transaction 619469d3-876a-481f-9d7e-271c5918505d was initiated by client.
+2020-11-06 17:35:05 TRACE CottonDMLService:196 - Insert transaction 619469d3-876a-481f-9d7e-271c5918505d was committed by client (1 tuples inserted).
+2020-11-06 17:35:05 TRACE CottonDMLService:101 - Insert transaction 19081149-4715-429f-a54f-7f1ff27944d4 was initiated by client.
+2020-11-06 17:35:05 TRACE CottonDMLService:196 - Insert transaction 19081149-4715-429f-a54f-7f1ff27944d4 was committed by client (1 tuples inserted).
+2020-11-06 17:35:06 TRACE CottonDMLService:101 - Insert transaction caf1478c-88fa-4ab1-b106-6029239044c2 was initiated by client.
+2020-11-06 17:35:06 TRACE CottonDMLService:196 - Insert transaction caf1478c-88fa-4ab1-b106-6029239044c2 was committed by client (1 tuples inserted).
+2020-11-06 17:35:06 TRACE CottonDMLService:101 - Insert transaction 9152e92c-a179-485d-be6b-0fde4dbfc4c0 was initiated by client.
+2020-11-06 17:35:06 TRACE CottonDMLService:196 - Insert transaction 9152e92c-a179-485d-be6b-0fde4dbfc4c0 was committed by client (1 tuples inserted).
+2020-11-06 17:35:06 TRACE UniqueHashIndex:154 - Rebuilding index index-hash_uq-cineast_cineast_multimediaobject_objectid
+2020-11-06 17:35:06 TRACE UniqueHashIndex:154 - Rebuilding index index-hash_uq-cineast_cineast_segment_segmentid
+2020-11-06 17:35:06 TRACE UniqueHashIndex:154 - Rebuilding index index-hash_uq-cineast_cineast_tags_id
+2020-11-06 17:35:06 TRACE LuceneIndex:113 - Rebuilding lucene index index-lucene-cineast_cineast_tags_name
+Counting elements of entity cineast.cineast_multimediaobject
+2020-11-06 17:35:06 TRACE CottonDQLService:41 - Parsing & binding query 604e3a79-8cad-466e-934c-e6b0b6cb3165 took 0ms.
+2020-11-06 17:35:06 TRACE CottonDQLService:46 - Executing query 604e3a79-8cad-466e-934c-e6b0b6cb3165 took 1ms.
+2020-11-06 17:35:06 TRACE CottonDQLService:150 - Sending back 1 rows for position 0 of query 604e3a79-8cad-466e-934c-e6b0b6cb3165 took 0ms.
+2020-11-06 17:35:06 INFO  CottonDQLService:52 - Query 604e3a79-8cad-466e-934c-e6b0b6cb3165 took 1ms.
+data {
+  key: "warren.cineast.cineast_multimediaobject.count()"
+  value {
+    longData: 4
+  }
+}
+
+
+cottontaildb> 2020-11-06 17:35:07 TRACE CottonDQLService:41 - Parsing & binding query cin-215 took 1ms.
+2020-11-06 17:35:07 TRACE CottonDQLService:46 - Executing query cin-215 took 0ms.
+2020-11-06 17:35:07 TRACE CottonDQLService:153 - Position 0 of query cin-215 yielded no results.
+2020-11-06 17:35:07 INFO  CottonDQLService:52 - Query cin-215 took 2ms.

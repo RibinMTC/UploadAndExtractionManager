@@ -18,12 +18,15 @@ app = Flask(__name__, template_folder=template_dir)
 
 # Todo: Allow also upload of video input
 app.config.update(
-    UPLOAD_EXTENSIONS=['.jpg', '.png', '.gif'],
+    UPLOAD_EXTENSIONS=['.jpg', '.png', '.gif', '.mp4'],
     # Flask-Dropzone config:
-    DROPZONE_ALLOWED_FILE_TYPE='image',
-    DROPZONE_MAX_FILE_SIZE=10,
+    DROPZONE_ALLOWED_FILE_CUSTOM=True,
+    DROPZONE_ALLOWED_FILE_TYPE='image/*, .mp4',
+    DROPZONE_MAX_FILE_SIZE=50,
     DROPZONE_UPLOAD_ON_CLICK=True,
-    DROPZONE_PARALLEL_UPLOADS=200
+    DROPZONE_PARALLEL_UPLOADS=200,
+    DROPZONE_INVALID_FILE_TYPE="This file type is not supported.",
+    DROPZONE_FILE_TOO_BIG="File is too big {{filesize}}. Max filesize: {{maxFilesize}}MB."
 )
 
 dropzone = Dropzone(app)
@@ -47,11 +50,31 @@ def secure_file_upload(uploaded_file, server_upload_path_str):
     filename = secure_filename(uploaded_file.filename)
     if filename != '':
         file_ext = os.path.splitext(filename)[1]
-        if file_ext not in app.config['UPLOAD_EXTENSIONS'] or \
-                file_ext != validate_image(uploaded_file.stream):
-            return "Invalid image", 400
+        if file_ext not in app.config['UPLOAD_EXTENSIONS']:  # or file_ext != validate_image(uploaded_file.stream):
+            return "Invalid file", 400
         uploaded_file.save(server_upload_path_str + '/' + filename)
     return '', 204
+
+
+@app.route('/aesthetic_details/<object_id>')
+def get_aesthetic_details(object_id):
+    test = cineast_and_cottontail_manager.get_object_feature_information(object_id)
+    if not bool(test):
+        return "No features could be found for this object"
+    return print_items(test)
+
+
+def print_items(dict_to_print, indent=0):
+    p = ['<ul>\n']
+    for k, v in dict_to_print.items():
+        if isinstance(v, dict):
+            p.append('<li>' + k + ':')
+            p.append(print_items(v))
+            p.append('</li>')
+        else:
+            p.append('<li>' + k + ':' + v + '</li>')
+    p.append('</ul>\n')
+    return '\n'.join(p)
 
 
 @app.route('/', methods=['POST', 'GET'])
@@ -104,16 +127,6 @@ serverConfigData = ServerConfigData(base_path)
 server_content_base_path = Path(serverConfigData.server_content_base_path_str)
 create_directories_if_not_exists(serverConfigData.server_content_base_path_str)
 create_directories_if_not_exists(serverConfigData.thumbnails_base_path_str)
-
-create_directories_if_not_exists(serverConfigData.cineast_shared_config_path_str)
-copy_if_file_does_not_exist(serverConfigData.cineast_job_abs_path,
-                            serverConfigData.cineast_base_path_str + '/example_job.json')
-copy_if_file_does_not_exist(serverConfigData.cineast_config_abs_path,
-                            serverConfigData.cineast_base_path_str + '/cineast.json')
-
-create_directories_if_not_exists(serverConfigData.cottontail_shared_config_path_str)
-copy_if_file_does_not_exist(serverConfigData.cottontail_config_abs_path,
-                            serverConfigData.cottontail_base_path_str + '/config.json')
 
 cineast_and_cottontail_manager = CineastAndCottontailManager(serverConfigData)
 

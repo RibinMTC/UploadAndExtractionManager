@@ -76,21 +76,12 @@
         }
       ],
       "boolean": [
-        {
-          "feature": "SortedByAestheticScoreRetriever",
-          "weight": 1.0,
+         {
+          "feature": "CombinedAestheticMetricsRetriever",
           "properties": {
-            "entity": "features_aestheticscore",
-            "attribute": "feature"
-          }
-        },
-        {
-          "feature": "RangeBooleanRetriever",
-          "weight": 1.0,
-          "properties": {
-            "entity": "features_facialemotion",
-            "attribute": "feature"
-          }
+            "entities": "features_aestheticscore, features_hecateimagemetrics, features_facialemotion"
+          },
+          "weight": 1.0
         }
       ]
     }
@@ -143,8 +134,9 @@
     "enablePrometheus": false,
     "prometheusPort": 4569
   },
-  "mlPredictorsConfig": {
+  "remotePredictorsConfig": {
     "aesthetic score": "http://mlsp-aesthetic-score-predictor:5001/predict",
-    "facial emotion": "http://deep-face-emotion-predictor:5002/predict"
+    "facial emotion": "http://deep-face-emotion-predictor:5002/predict",
+    "hecate image metrics": "http://hecate-image-metrics-predictor:5004/predict"
   }
 }

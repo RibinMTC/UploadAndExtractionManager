@@ -1,6 +1,6 @@
 {
     "input": {
-        "path": "/local/home/cribin/Documents/AestheticsBackup/Datasets/ava_large_dataset/extracted_images/images/2_1",
+        "path": "/local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/content-storage-test/content-base/import_4",
         "depth": 2,
         "skip": 0,
         "id": {
@@ -56,13 +56,16 @@
         },
         {
             "name": "FacialEmotionExtractor"
+        },
+        {
+            "name": "HecateImageMetricsRemoteExtractor"
         }
     ],
     "exporters": [
         {
             "name": "ShotThumbnailsExporter",
             "properties": {
-                "destination": "/content-storage/output-thumbnails"
+                "destination": "/local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/content-storage-test/output-thumbnails"
             }
         }
     ],

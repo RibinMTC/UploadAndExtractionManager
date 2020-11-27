@@ -1,0 +1,8 @@
+{
+    "root": "/local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/content-storage-test/cottontaildb-data",
+    "memoryConfig": {
+        "forceUnmapMappedFiles": true,
+        "dataPageShift": 22,
+        "cataloguePageShift": 20
+    }
+}

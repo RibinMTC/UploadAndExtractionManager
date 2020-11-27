@@ -12,6 +12,18 @@ services:
       - '5002:5002'
     volumes:
       - aesthetics-content-storage:/content-storage
+  hecate-image-metrics-predictor:
+    image: cribin/hecate-image-metrics-predictor:dev
+    ports:
+      - '5004:5004'
+    volumes:
+        - aesthetics-content-storage:/content-storage
+  parnaca-image-metrics-predictor:
+    image: cribin/parnaca-image-metrics-predictor:dev
+    ports:
+      - '5005:5005'
+    volumes:
+      - aesthetics-content-storage:/content-storage
   upload-extraction-manager:
     image: cribin/upload-and-extraction-manager:dev
     volumes:
@@ -19,8 +31,15 @@ services:
 #      - /local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/test_config:/shared_config
     ports:
       - '5003:5003'
+      - '4567:4567'
+  vitrivr-ng-webinterface:
+    image: cribin/vitrivr-web-interface-angular-app:dev
+    volumes:
+      - aesthetics-content-storage:/content-storage
+#      - /local/home/cribin/Documents/AestheticsBackup/Aesthetics_ContentViewer_Main/Vitrivr_Local_Installation/vitrivr-ng/src/config.json:/vitrivr-webinterface/src/config.json
     depends_on:
-      - "deep-face-emotion-predictor"
-      - "mlsp-aesthetic-score-predictor"
+      - 'upload-extraction-manager'
+    ports:
+      - '4200:4200'
 volumes:
   aesthetics-content-storage:

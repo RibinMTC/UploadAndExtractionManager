@@ -137,6 +137,6 @@
   "remotePredictorsConfig": {
     "aesthetic score": "http://mlsp-aesthetic-score-predictor:5001/predict",
     "facial emotion": "http://deep-face-emotion-predictor:5002/predict",
-    "hecate image metrics": "http://hecate-image-metrics-predictor:5004/predict"
+    "hecate image metrics": "http://hecate-image-and-video-metrics-predictor:5004/predict"
   }
 }

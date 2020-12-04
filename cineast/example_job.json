@@ -1,6 +1,6 @@
 {
     "input": {
-        "path": "/local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/content-storage-test/content-base/import_4",
+        "path": "/content-storage/content-base/import_13",
         "depth": 2,
         "skip": 0,
         "id": {
@@ -65,7 +65,7 @@
         {
             "name": "ShotThumbnailsExporter",
             "properties": {
-                "destination": "/local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/content-storage-test/output-thumbnails"
+                "destination": "/content-storage/output-thumbnails"
             }
         }
     ],

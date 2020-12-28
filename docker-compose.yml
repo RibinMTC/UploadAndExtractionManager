@@ -9,7 +9,7 @@ services:
   deep-face-emotion-predictor:
     image: cribin/deepface-emotion-predictor:dev
     ports:
-      - '5002:5002'
+      - '5007:5007'
     volumes:
       - aesthetics-content-storage:/content-storage
   hecate-image-and-video-metrics-predictor:
@@ -18,12 +18,6 @@ services:
       - '5004:5004'
     volumes:
         - aesthetics-content-storage:/content-storage
-#  parnaca-image-metrics-predictor:
-#    image: cribin/parnaca-image-metrics-predictor:dev
-#    ports:
-#      - '5005:5005'
-#    volumes:
-#      - aesthetics-content-storage:/content-storage
   upload-extraction-manager:
     image: cribin/upload-and-extraction-manager:dev
     volumes:

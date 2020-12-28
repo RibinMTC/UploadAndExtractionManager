@@ -5,11 +5,12 @@ import src.utils.json_writer as json_manager
 
 
 class CottontailManager(SubprocessManager):
+    """
+    This class handles the setup and interaction with cottontail db via the subprocess module
+    """
 
     def __init__(self, server_config_data):
         self._setup_config(server_config_data)
-        self.__feature_table_names = server_config_data.feature_table_names
-        self.__feature_print_names = server_config_data.feature_print_names
 
         cottontail_start_cmd = "java -jar cottontaildb-1.0-SNAPSHOT-all.jar " + server_config_data.cottontail_config_abs_path
         super().__init__(server_config_data.cottontail_base_path_str, cottontail_start_cmd)
@@ -21,6 +22,18 @@ class CottontailManager(SubprocessManager):
         cottontail_config_dict['root'] = server_config_data.shared_volume_base_path_str + '/cottontaildb-data'
 
         json_manager.store_dict_to_json(server_config_data.cottontail_config_abs_path, cottontail_config_dict)
+
+        try:
+            self.__feature_table_names = []
+            self.__feature_print_names = []
+            cineast_config_dict = json_manager.get_dict_from_json(server_config_data.cineast_config_abs_path)
+            for aesthetic_predictor_config in cineast_config_dict['aestheticPredictorsConfig']:
+                table_name = aesthetic_predictor_config['tableName']
+                print_name = table_name.replace('_', ' ').title()
+                self.__feature_table_names.append(table_name)
+                self.__feature_print_names.append(print_name)
+        except Exception as e:
+            print(str(e))
 
     def __count_elements_in_table(self, table_name):
         super()._run_command_on_process("count cineast " + table_name)

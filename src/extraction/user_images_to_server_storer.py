@@ -1,3 +1,8 @@
+"""
+Module Responsibility: On each new upload, create a new folder and copy contents to said folder
+Utilized by main_flask_app module
+"""
+
 import os
 import shutil
 from pathlib import Path

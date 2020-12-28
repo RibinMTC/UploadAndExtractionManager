@@ -1,7 +1,14 @@
+"""
+Main flask module.
+Module Responsibilities:
+    1.  Provide an upload web interface( html template: templates/index_dropzone.html), onto which users can upload
+        images to be extracted by cineast
+    2.  Start cineast extraction upon image upload
+    3.  Provide details(predicted aesthetic features) for a given segment(image or video segment) from the vitrivr-web-interface
+"""
 import imghdr
 import os
 from pathlib import Path
-from shutil import copyfile
 
 from flask import Flask, render_template, request
 from flask_dropzone import Dropzone
@@ -11,12 +18,11 @@ from src.extraction.cineast_and_cottontail_manager import CineastAndCottontailMa
 from src.extraction.user_images_to_server_storer import get_new_import_folder_path_str
 from src.utils.server_config_data import ServerConfigData
 
-base_path = Path(__file__).parent.parent.parent
+base_path = Path(__file__).parent.parent
 
 template_dir = base_path / 'templates'
 app = Flask(__name__, template_folder=template_dir)
 
-# Todo: Allow also upload of video input
 app.config.update(
     UPLOAD_EXTENSIONS=['.jpg', '.png', '.gif', '.mp4'],
     # Flask-Dropzone config:
@@ -32,13 +38,13 @@ app.config.update(
 dropzone = Dropzone(app)
 
 
-def validate_image(stream):
-    header = stream.read(512)
-    stream.seek(0)
-    format = imghdr.what(None, header)
-    if not format:
-        return None
-    return '.' + (format if format != 'jpeg' else 'jpg')
+# def validate_image(stream):
+#     header = stream.read(512)
+#     stream.seek(0)
+#     format = imghdr.what(None, header)
+#     if not format:
+#         return None
+#     return '.' + (format if format != 'jpeg' else 'jpg')
 
 
 @app.errorhandler(413)
@@ -90,43 +96,9 @@ def upload():
     return render_template('index_dropzone.html')
 
 
-def create_directories_if_not_exists(directory_abs_path):
-    if not os.path.exists(directory_abs_path):
-        os.makedirs(directory_abs_path)
-        print("Created folder: " + directory_abs_path)
-
-
-def copy_if_file_does_not_exist(file_path_dest_str, file_path_src_str):
-    my_file = Path(file_path_dest_str)
-    if not my_file.is_file():
-        copyfile(file_path_src_str, file_path_dest_str)
-        print("Copied : " + file_path_src_str + " to :" + file_path_dest_str)
-
-
-# @app.route('/', methods=['POST', 'GET'])
-# def send_test_message_to_ml_predictor():
-#     try:
-#         # test_path = base_path / "test_config/cineast.json"
-#         cineast_shared_bind_mound_config = "/shared_config/cineast.json"
-#         cineast_config_dict = json_manager.get_dict_from_json(cineast_shared_bind_mound_config)
-#         ml_predictor_address = cineast_config_dict['mlPredictorsConfig']['facial emotion']
-#         image_path = str((base_path / "oldman.jpg").absolute())
-#         dict_to_send = {'contentPath': image_path,
-#                         'startFrame': 0,
-#                         'endFrame': 0}
-#         response = requests.post(ml_predictor_address, json=dict_to_send)
-#         print("Received response: " + response.text)
-#         return "Success!"
-#     except Exception as e:
-#         print("Exception occured when calling ml predictor")
-#         print(str(e))
-#         return "Try again!"
-
-
-serverConfigData = ServerConfigData(base_path)
+config_file_path = "vitrivr_pipeline_config_local.json"
+serverConfigData = ServerConfigData(base_path, config_file_path)
 server_content_base_path = Path(serverConfigData.server_content_base_path_str)
-create_directories_if_not_exists(serverConfigData.server_content_base_path_str)
-create_directories_if_not_exists(serverConfigData.thumbnails_base_path_str)
 
 cineast_and_cottontail_manager = CineastAndCottontailManager(serverConfigData)
 

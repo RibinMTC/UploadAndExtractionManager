@@ -37,11 +37,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # copy project
 COPY . .
 
-##get cineast jar and config files from git repo(forker cineast repo by ribin)
-#RUN wget https://github.com/RibinMTC/cineast/blob/primitive-extraction-support/cineast-api/build/libs/cineast-api-3.0.1-full.jar -O /uploadAndExtractionManager/cineast/cineast-api-3.0.1-full.jar
-#RUN wget https://github.com/RibinMTC/cineast/blob/primitive-extraction-support/cineast_deploy.json -O /uploadAndExtractionManager/cineast/cineast_deploy.json
 
 # set app port
 EXPOSE 5003 4567 4568 1865
 
-ENTRYPOINT ["gunicorn", "--config", "gunicorn_config.py", "src.upload.flask_file_uploader:app"]
+ENTRYPOINT ["gunicorn", "--config", "gunicorn_config.py", "src.main_flask_app:app"]

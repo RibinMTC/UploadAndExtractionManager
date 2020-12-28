@@ -1,3 +1,10 @@
+"""
+Module Responsibilities:
+    1. Open, close and write to log files
+    2. Communicate with subprocesses
+Utilized by: SubprocessManager
+"""
+
 import subprocess
 from subprocess import PIPE
 import time
@@ -20,17 +27,17 @@ def close_log_file(log_file):
         log_file.close()
 
 
-def write_bytes_to_log_file(log_file_path, bytes_to_write, truncate=True):
+def write_bytes_to_file(file_path, bytes_to_write, truncate=True):
     now = datetime.now()
     dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
-    with open(log_file_path, 'wb') as log_file:
+    with open(file_path, 'wb') as file:
         if truncate:
-            log_file.truncate(0)
-        log_file.write(
+            file.truncate(0)
+        file.write(
             ('\n************************************** ' + dt_string + ' ***********************************\n').encode(
                 'utf-8'))
-        log_file.write(bytes_to_write)
-        log_file.flush()
+        file.write(bytes_to_write)
+        file.flush()
 
 
 def run_subprocess(cmd, cmd_dir=None, shell=False, log_file=None):
@@ -56,7 +63,7 @@ def run_command_on_subprocess(process_id, cmd):
 def communicate_and_log_process_output(process_id, log_file_path_str):
     out, err = process_id.communicate()
 
-    write_bytes_to_log_file(log_file_path_str, out)
+    write_bytes_to_file(log_file_path_str, out)
 
 
 def terminate_subprocess(process_id):

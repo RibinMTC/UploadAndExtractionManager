@@ -7,6 +7,6 @@
 	"cineast_config_json":"cineast_local.json",
 	"cottontail_base":"cottontail",
 	"cottontail_config_json": "config_local.json",
-	"feature_table_names": ["features_aestheticscore", "features_facialemotion", "features_hecateimagemetrics"],
-	"feature_print_names": ["Aesthetic Score", "Facial Emotion", "Hecate Image Metrics"]
+	"cineast_jar_url": "https://vitrivr-config-files.s3.eu-central-1.amazonaws.com/cineast-api-3.0.1-full.jar",
+	"cineast_job_file_url": "https://raw.githubusercontent.com/RibinMTC/Cineast-config-storage/primitive-extraction-support/example_job.json"
 }

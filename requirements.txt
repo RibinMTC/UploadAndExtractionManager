@@ -12,3 +12,4 @@ progressbar==2.5
 requests==2.24.0
 urllib3==1.25.11
 Werkzeug==1.0.1
+wget==3.2

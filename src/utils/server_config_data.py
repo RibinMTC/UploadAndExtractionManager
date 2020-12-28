@@ -2,10 +2,14 @@ import json
 
 
 class ServerConfigData:
+    """
+    This class stores the configuration data from the vitrivr_pipeline_config.json file.
+    """
 
-    def __init__(self, base_path):
+    def __init__(self, base_path, config_file_path):
         base_path_str = str(base_path.absolute())
-        config_file_path = base_path / 'vitrivr_paths_config_new.json'
+        self.base_path = base_path
+        config_file_path = base_path / config_file_path
         with config_file_path.open() as json_paths_file:
             data = json.load(json_paths_file)
             self.shared_volume_base_path_str = data['shared_volume_base']
@@ -26,8 +30,8 @@ class ServerConfigData:
             self.cottontail_config_abs_path = self.__join_paths(self.cottontail_base_path_str, data[
                 'cottontail_config_json'])
 
-            self.feature_table_names = data['feature_table_names']
-            self.feature_print_names = data['feature_print_names']
+            self.cineast_jar_url = data['cineast_jar_url']
+            self.cineast_job_url = data['cineast_job_file_url']
 
     def __join_paths(self, path1, path2):
         return path1 + '/' + path2

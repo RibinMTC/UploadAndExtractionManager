@@ -1,6 +1,6 @@
 {
     "input": {
-        "path": "/content-storage/content-base/import_13",
+        "path": "/local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/content-storage-test/content-base/import_1",
         "depth": 2,
         "skip": 0,
         "id": {
@@ -10,62 +10,14 @@
     },
     "extractors": [
         {
-            "name": "AverageColor"
-        },
-        {
-            "name": "AverageColorARP44"
-        },
-        {
-            "name": "AverageColorCLD"
-        },
-        {
-            "name": "AverageColorGrid8"
-        },
-        {
-            "name": "AverageColorRaster"
-        },
-        {
-            "name": "AverageFuzzyHist"
-        },
-        {
-            "name": "AverageColorGrid8Reduced15"
-        },
-        {
-            "name": "CLD"
-        },
-        {
-            "name": "EdgeARP88"
-        },
-        {
-            "name": "EdgeGrid16"
-        },
-        {
-            "name": "EHD"
-        },
-        {
-            "name": "HPCP12Shingle"
-        },
-        {
-            "name": "MedianColor"
-        },
-        {
-            "name": "MedianColorGrid8"
-        },
-        {
-            "name": "AestheticScoreExtractor"
-        },
-        {
-            "name": "FacialEmotionExtractor"
-        },
-        {
-            "name": "HecateImageMetricsRemoteExtractor"
+            "name": "MainAestheticFeaturesPredictorInitializer"
         }
     ],
     "exporters": [
         {
             "name": "ShotThumbnailsExporter",
             "properties": {
-                "destination": "/content-storage/output-thumbnails"
+                "destination": "/local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/content-storage-test/output-thumbnails"
             }
         }
     ],

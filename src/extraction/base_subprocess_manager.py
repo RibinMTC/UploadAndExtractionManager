@@ -3,7 +3,10 @@ from src.utils.subprocess_communication import open_log_file, run_subprocess, cl
 
 
 class SubprocessManager(metaclass=abc.ABCMeta):
-
+    """
+    Base class to communicate with subprocesses
+    Implementations: CineastManager, CottontailManager
+    """
     def __init__(self, process_base_path_str, process_start_cmd):
         self.process_log_file_path_str = process_base_path_str + "/log.txt"
         self.__process_log_file = open_log_file(self.process_log_file_path_str)

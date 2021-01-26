@@ -112,10 +112,10 @@
     "api": {
         "enableCLI": true,
         "enableWebsocket": true,
-        "enableWebsocketSecure": false,
+        "enableWebsocketSecure": true,
         "enableRest": true,
         "enableRestLiveDoc": true,
-        "enableRestSecure": false,
+        "enableRestSecure": true,
         "enableLegacy": false,
         "httpPort": 4567,
         "httpsPort": 4568,
@@ -125,7 +125,9 @@
         "serveUI": true,
         "uiLocation": "dist",
         "thumbnailLocation": "/local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/content-storage-test/output-thumbnails",
-        "objectLocation": "/local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/content-storage-test/content-base"
+        "objectLocation": "/local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/content-storage-test/content-base",
+        "keystore": "/etc/ssl/certs/apache-selfsigned.jks",
+        "keystorePassword": "mtcCineast"
     },
     "monitoring": {
         "enablePrometheus": false,
@@ -133,6 +135,7 @@
     },
     "aestheticPredictorsConfig": [
         {
+            "predictorId": 1,
             "tableName": "features_aesthetic_score",
             "apiAddress": "http://localhost:5001/predict",
             "columnNameAndType": {
@@ -142,6 +145,7 @@
             "multipleValuesPerPrediction": false
         },
         {
+            "predictorId": 2,
             "tableName": "features_facial_emotion",
             "apiAddress": "http://localhost:5007/predict",
             "columnNameAndType": {
@@ -149,6 +153,22 @@
             },
             "videoSupport": false,
             "multipleValuesPerPrediction": true
+        },
+        {
+            "predictorId": 3,
+            "tableName": "features_hecate_image_metrics",
+            "apiAddress": "http://localhost:5004/predict",
+            "columnNameAndType": {
+                "Brightness": "float",
+                "Sharpness": "float",
+                "Asymmetry": "float"
+            },
+            "videoSupport": true,
+            "multipleValuesPerPrediction": false
         }
+    ],
+    "activePredictors": [
+        2,
+        3
     ]
 }

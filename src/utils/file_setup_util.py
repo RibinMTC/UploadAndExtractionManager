@@ -11,6 +11,26 @@ import shutil
 import wget
 
 
+def get_num_of_files_in_directory(directory_abs_path):
+    return len([f for f in os.listdir(directory_abs_path) if os.path.isfile(os.path.join(directory_abs_path, f))])
+
+
+def delete_contents_in_directory(directory_abs_path):
+    try:
+        shutil.rmtree(directory_abs_path)
+    except OSError as e:
+        print("Error: %s : %s" % (directory_abs_path, e.strerror))
+
+
+def delete_contents_with_exceptions_in_directory(directory_abs_path, subdirs_to_exclude):
+    try:
+        for f in os.scandir(directory_abs_path):
+            if f.is_dir() and f.path not in subdirs_to_exclude:
+                shutil.rmtree(f.path)
+    except OSError as e:
+        print("Error: %s : %s" % (directory_abs_path, e.strerror))
+
+
 def create_directories_if_not_exists(directory_abs_path):
     if not os.path.exists(directory_abs_path):
         os.makedirs(directory_abs_path)

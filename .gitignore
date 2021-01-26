@@ -142,3 +142,9 @@ cython_debug/
 content-storage-test/
 
 cineast/logs/
+/custom_content_test/
+/ssl_certs/
+
+cineast/log.txt
+
+cottontail/log.txt

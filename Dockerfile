@@ -37,8 +37,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 # copy project
 COPY . .
 
+ENV AM_I_IN_A_DOCKER_CONTAINER Yes
 
 # set app port
 EXPOSE 5003 4567 4568 1865
 
-ENTRYPOINT ["gunicorn", "--config", "gunicorn_config.py", "src.main_flask_app:app"]
+RUN ["chmod", "+x", "./bootstrap.sh"]
+
+ENTRYPOINT ["./bootstrap.sh"]
+#ENTRYPOINT ["gunicorn", "--config", "gunicorn_config.py", "src.main_flask_app:app"]

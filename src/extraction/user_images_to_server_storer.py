@@ -25,7 +25,10 @@ def __get_new_import_folder_number(content_base_path_str):
     if len(sorted_subdir) == 0:
         return 1
 
-    get_last_import_number = int(sorted_subdir[-1].split('_')[1])
+    try:
+        get_last_import_number = int(sorted_subdir[-1].split('_')[1])
+    except ValueError:
+        return 1
 
     return get_last_import_number + 1
 

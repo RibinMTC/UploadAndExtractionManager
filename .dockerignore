@@ -1,4 +1,6 @@
 .git
 .gitignore
 ./content-storage-test
+./custom_content_test
 ./cineast/logs
+./ssl_certs

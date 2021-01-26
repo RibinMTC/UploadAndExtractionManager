@@ -14,7 +14,6 @@ class CottontailManager(SubprocessManager):
 
         cottontail_start_cmd = "java -jar cottontaildb-1.0-SNAPSHOT-all.jar " + server_config_data.cottontail_config_abs_path
         super().__init__(server_config_data.cottontail_base_path_str, cottontail_start_cmd)
-        print(self.process_log_file_path_str)
 
     def _setup_config(self, server_config_data):
         cottontail_config_dict = json_manager.get_dict_from_json(server_config_data.cottontail_config_abs_path)
@@ -77,7 +76,10 @@ class CottontailManager(SubprocessManager):
                     if key_string in name:
                         if feature_string in value:
                             value = key_name
-                        dict_feature_name_to_value[value] = dict_current_value
+                        if value in dict_feature_name_to_value:
+                            dict_feature_name_to_value[value].append(dict_current_value)
+                        else:
+                            dict_feature_name_to_value[value] = [dict_current_value]
                     else:
                         dict_current_value = value
 
@@ -90,7 +92,8 @@ class CottontailManager(SubprocessManager):
             time.sleep(0.1)
             features_dict.update(self.__get_object__features_from_log_file(feature_print_name))
 
-        features_dict = {key.replace('"', '').strip().capitalize(): value for key, value in features_dict.items()}
+        features_dict = {key.replace('"', '').strip().capitalize(): ','.join(value).replace('"', '').strip() for key, value in features_dict.items()}
+        features_dict.pop('Id', None)
         return features_dict
 
     def count_elements_in_table(self, table_name):

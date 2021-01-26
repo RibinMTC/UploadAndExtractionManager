@@ -1,5 +1,6 @@
 {
-	"shared_volume_base": "/local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/content-storage-test",
+	"upload_import_volume_base": "/local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/content-storage-test",
+	"custom_import_volume_base": "/local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/custom_content_test",
 	"content_base":"content-base",
 	"thumbnails_base":"output-thumbnails",
 	"cineast_base":"cineast",
@@ -7,6 +8,10 @@
 	"cineast_config_json":"cineast_local.json",
 	"cottontail_base":"cottontail",
 	"cottontail_config_json": "config_local.json",
+	"update_cineast_jar": false,
 	"cineast_jar_url": "https://vitrivr-config-files.s3.eu-central-1.amazonaws.com/cineast-api-3.0.1-full.jar",
-	"cineast_job_file_url": "https://raw.githubusercontent.com/RibinMTC/Cineast-config-storage/primitive-extraction-support/example_job.json"
+	"cineast_job_file_url": "https://raw.githubusercontent.com/RibinMTC/Cineast-config-storage/primitive-extraction-support/example_job.json",
+	"supported_content_types": [".jpg",".png", ".jpeg", ".mp4"],
+	"custom_content_import":false,
+	"execute_feature_extraction": false
 }

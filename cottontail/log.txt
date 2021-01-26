@@ -1,9 +1,0 @@
-
-************************************** 28/12/2020 12:01:44 ***********************************
-2020-12-28 12:01:45 INFO  CottontailGrpcServer:62 - Cottontail DB server is up and running at port 1865 ! Hop along...
-Dec 28, 2020 12:01:45 PM org.jline.utils.Log logr
-WARNING: Unable to create a system terminal, creating a dumb terminal (enable debug logging for more information)
-cottontaildb> 2020-12-28 12:01:50 TRACE CottonDQLService:41 - Parsing & binding query cin-071 took 155ms.
-2020-12-28 12:01:50 TRACE CottonDQLService:46 - Executing query cin-071 took 13ms.
-2020-12-28 12:01:50 TRACE CottonDQLService:153 - Position 0 of query cin-071 yielded no results.
-2020-12-28 12:01:50 INFO  CottonDQLService:52 - Query cin-071 took 172ms.

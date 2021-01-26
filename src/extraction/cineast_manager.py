@@ -16,16 +16,26 @@ class CineastManager(SubprocessManager):
         super().__init__(server_config_data.cineast_base_path_str, cineast_start_cmd)
 
     def _setup_config(self, server_config_data):
-        self._update_cineast_jar_file(server_config_data)
+        if server_config_data.update_cineast_jar_file:
+            self._update_cineast_jar_file(server_config_data)
 
         cineast_config_dict = json_manager.get_dict_from_json(server_config_data.cineast_config_abs_path)
 
         if server_config_data.thumbnails_base_path_str != "" and server_config_data.server_content_base_path_str != "":
             cineast_config_dict['api']['thumbnailLocation'] = server_config_data.thumbnails_base_path_str
-            cineast_config_dict['api']['objectLocation'] = server_config_data.server_content_base_path_str
+            if server_config_data.custom_content_import:
+                cineast_config_dict['api']['objectLocation'] = server_config_data.shared_volume_base_path_str
+            else:
+                cineast_config_dict['api']['objectLocation'] = server_config_data.server_content_base_path_str
         else:
             print("!!! Thumbnails or Content base location is empty in the main config file !!!")
             raise ValueError
+
+        all_predictors_address = [predictor['apiAddress'].rsplit('/', 1)[0] for predictor in
+                                  cineast_config_dict['aestheticPredictorsConfig']]
+        active_predictors_index = cineast_config_dict['activePredictors']
+        self.active_predictors_address = [all_predictors_address[active_predictor_index - 1] + '/is_model_ready' for active_predictor_index
+                                          in active_predictors_index]
 
         json_manager.store_dict_to_json(server_config_data.cineast_config_abs_path, cineast_config_dict)
 
@@ -68,6 +78,7 @@ class CineastManager(SubprocessManager):
                 print("Finished extraction with errors. See cineast log file for more information!")
             else:
                 print("Finished extraction successfully")
+            return exception_occurred
 
     def __has_error_occurred_during_extraction(self):
         with open(self.process_log_file_path_str, 'r') as cineast_log_file_to_read:
@@ -77,3 +88,6 @@ class CineastManager(SubprocessManager):
                 if string_to_search in line:
                     return True
             return False
+
+    def get_active_predictors_address(self):
+        return self.active_predictors_address

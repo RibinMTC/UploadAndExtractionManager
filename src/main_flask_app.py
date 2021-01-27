@@ -16,7 +16,6 @@ from werkzeug.utils import secure_filename
 
 from src.extraction.cineast_and_cottontail_manager import CineastAndCottontailManager
 from src.extraction.user_images_to_server_storer import get_new_import_folder_path_str
-from src.utils.file_setup_util import get_num_of_files_in_directory
 from src.utils.server_config_data import ServerConfigData
 
 if os.environ.get('AM_I_IN_A_DOCKER_CONTAINER', False):

@@ -11,8 +11,21 @@ import shutil
 import wget
 
 
+def is_file_extension_supported(filename, supported_content_types):
+    file_ext = os.path.splitext(filename)[1]
+    return file_ext in supported_content_types
+
+
 def get_num_of_files_in_directory(directory_abs_path):
     return len([f for f in os.listdir(directory_abs_path) if os.path.isfile(os.path.join(directory_abs_path, f))])
+
+
+def get_num_of_supported_files_in_directory(directory_abs_path, supported_content_types):
+    all_files = []
+    for ext in supported_content_types:
+        wildcard_ext = '*'+ext
+        all_files.extend(Path(directory_abs_path).glob(wildcard_ext))
+    return len(all_files)
 
 
 def delete_contents_in_directory(directory_abs_path):

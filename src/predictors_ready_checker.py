@@ -10,7 +10,8 @@ from pathlib import Path
 
 import requests
 
-from src.utils.file_setup_util import get_num_of_files_in_directory, delete_contents_with_exceptions_in_directory
+from src.utils.file_setup_util import delete_contents_with_exceptions_in_directory, \
+    get_num_of_supported_files_in_directory
 from src.extraction.cineast_and_cottontail_manager import CineastAndCottontailManager
 from src.utils.server_config_data import ServerConfigData
 
@@ -46,7 +47,8 @@ def execute_custom_content_upload():
         print("The folder " + custom_content_path + " does not exist. Aborting custom import.")
         return
 
-    num_of_files_to_extract = get_num_of_files_in_directory(custom_content_path)
+    num_of_files_to_extract = get_num_of_supported_files_in_directory(custom_content_path,
+                                                                      serverConfigData.supported_content_types)
     print("Uploading " + str(num_of_files_to_extract) + " custom content...")
     if num_of_files_to_extract > 0:
         cineast_and_cottontail_manager.start_extraction(custom_content_path,

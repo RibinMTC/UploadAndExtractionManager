@@ -11,7 +11,7 @@
 	"update_cineast_jar": false,
 	"cineast_jar_url": "https://vitrivr-config-files.s3.eu-central-1.amazonaws.com/cineast-api-3.0.1-full.jar",
 	"cineast_job_file_url": "https://raw.githubusercontent.com/RibinMTC/Cineast-config-storage/primitive-extraction-support/example_job.json",
-	"supported_content_types": [".jpg", ".jpeg", ".png", ".gif", ".mp4"],
+	"supported_content_types": [".jpg", ".jpeg", ".png" , ".mp4"],
 	"custom_content_import":false,
 	"execute_feature_extraction": false
 }

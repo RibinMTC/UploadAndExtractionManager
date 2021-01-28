@@ -44,6 +44,8 @@ class ServerConfigData:
             self.cineast_jar_url = data['cineast_jar_url']
             self.cineast_job_url = data['cineast_job_file_url']
 
+            self.cottontail_jar_url = data['cottontail_jar_url']
+
             self.supported_content_types = data['supported_content_types']
 
             self.execute_feature_extraction = data['execute_feature_extraction']

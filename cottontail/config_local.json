@@ -1,5 +1,5 @@
 {
-    "root": "/local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/content-storage-test/cottontaildb-data",
+    "root": "/local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/custom_content_test/cottontaildb-data",
     "memoryConfig": {
         "forceUnmapMappedFiles": true,
         "dataPageShift": 22,

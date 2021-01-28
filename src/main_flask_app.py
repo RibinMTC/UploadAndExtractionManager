@@ -114,7 +114,6 @@ def upload():
 
 
 cineast_and_cottontail_manager = CineastAndCottontailManager(serverConfigData)
-cineast_and_cottontail_manager.setup_directories(serverConfigData)
 
 if __name__ == '__main__':
     app.run(debug=False, threaded=False, port=5003, host='0.0.0.0')

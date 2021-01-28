@@ -124,8 +124,8 @@
         "serveContent": true,
         "serveUI": true,
         "uiLocation": "dist",
-        "thumbnailLocation": "/local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/content-storage-test/output-thumbnails",
-        "objectLocation": "/local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/content-storage-test/content-base",
+        "thumbnailLocation": "/local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/custom_content_test/output-thumbnails",
+        "objectLocation": "/local/home/cribin/Documents/AestheticsBackup/UploadAndExtractionManager/custom_content_test",
         "keystore": "/etc/ssl/certs/apache-selfsigned.jks",
         "keystorePassword": "mtcCineast"
     },
@@ -168,7 +168,6 @@
         }
     ],
     "activePredictors": [
-        2,
         3
     ]
 }

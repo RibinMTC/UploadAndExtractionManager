@@ -31,12 +31,6 @@ class CineastManager(SubprocessManager):
             print("!!! Thumbnails or Content base location is empty in the main config file !!!")
             raise ValueError
 
-        all_predictors_address = [predictor['apiAddress'].rsplit('/', 1)[0] for predictor in
-                                  cineast_config_dict['aestheticPredictorsConfig']]
-        active_predictors_index = cineast_config_dict['activePredictors']
-        self.active_predictors_address = [all_predictors_address[active_predictor_index - 1] + '/is_model_ready' for active_predictor_index
-                                          in active_predictors_index]
-
         json_manager.store_dict_to_json(server_config_data.cineast_config_abs_path, cineast_config_dict)
 
         cineast_job_dict = json_manager.get_dict_from_json(server_config_data.cineast_job_abs_path)
@@ -89,5 +83,13 @@ class CineastManager(SubprocessManager):
                     return True
             return False
 
-    def get_active_predictors_address(self):
-        return self.active_predictors_address
+    @staticmethod
+    def get_active_predictors_address(server_config_data):
+        cineast_config_dict = json_manager.get_dict_from_json(server_config_data.cineast_config_abs_path)
+        all_predictors_address = [predictor['apiAddress'].rsplit('/', 1)[0] for predictor in
+                                  cineast_config_dict['aestheticPredictorsConfig']]
+        active_predictors_index = cineast_config_dict['activePredictors']
+        active_predictors_address = [all_predictors_address[active_predictor_index - 1] + '/is_model_ready' for
+                                     active_predictor_index
+                                     in active_predictors_index]
+        return active_predictors_address

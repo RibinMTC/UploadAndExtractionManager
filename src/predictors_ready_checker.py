@@ -27,8 +27,8 @@ def check_if_predictor_is_ready(predictor_address):
         return None
 
 
-def poll_until_active_predictors_ready():
-    active_predictors_address = cineast_and_cottontail_manager.get_active_predictors_address()
+def poll_until_active_predictors_ready(server_config_data):
+    active_predictors_address = CineastAndCottontailManager.get_active_predictors_address(server_config_data)
     for active_predictor_address in active_predictors_address:
         print("Waiting for connection with: " + active_predictor_address + " ...")
         predictor_response = None
@@ -58,18 +58,15 @@ def execute_custom_content_upload():
 if __name__ == '__main__':
     if os.environ.get('AM_I_IN_A_DOCKER_CONTAINER', False):
         config_file_path = "vitrivr_pipeline_config.json"
-        print("Using global config")
     else:
         config_file_path = "vitrivr_pipeline_config_local.json"
-        print("Using local config")
 
     base_path = Path(__file__).parent.parent
     serverConfigData = ServerConfigData(base_path, config_file_path)
     if serverConfigData.execute_feature_extraction:
-        cineast_and_cottontail_manager = CineastAndCottontailManager(serverConfigData)
-        poll_until_active_predictors_ready()
+        poll_until_active_predictors_ready(serverConfigData)
         if serverConfigData.custom_content_import:
             delete_contents_with_exceptions_in_directory(serverConfigData.shared_volume_base_path_str,
                                                          serverConfigData.server_content_base_path_str)
-            cineast_and_cottontail_manager.setup_directories(serverConfigData)
+            cineast_and_cottontail_manager = CineastAndCottontailManager(serverConfigData)
             execute_custom_content_upload()

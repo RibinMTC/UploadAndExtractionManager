@@ -13,11 +13,12 @@ class CineastAndCottontailManager:
     """
 
     def __init__(self, server_config_data):
+        self._setup_directories(server_config_data)
         self.__cottontailManager = CottontailManager(server_config_data)
 
         self.__cineastManager = CineastManager(server_config_data)
 
-    def setup_directories(self, server_config_data):
+    def _setup_directories(self, server_config_data):
         create_directories_if_not_exists(server_config_data.server_content_base_path_str)
         create_directories_if_not_exists(server_config_data.thumbnails_base_path_str)
 
@@ -35,5 +36,6 @@ class CineastAndCottontailManager:
     def get_object_feature_information(self, object_id):
         return self.__cottontailManager.get_all_aesthetic_attributes_of_object(object_id)
 
-    def get_active_predictors_address(self):
-        return self.__cineastManager.get_active_predictors_address()
+    @staticmethod
+    def get_active_predictors_address(server_config_data):
+        return CineastManager.get_active_predictors_address(server_config_data)

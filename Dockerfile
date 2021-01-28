@@ -39,8 +39,8 @@ COPY . .
 
 ENV AM_I_IN_A_DOCKER_CONTAINER Yes
 
-RUN wget -P ./cineast https://vitrivr-config-files.s3.eu-central-1.amazonaws.com/cineast-api-3.0.1-full.jar
-RUN wget -P ./cottontail https://vitrivr-config-files.s3.eu-central-1.amazonaws.com/cottontaildb-1.0-SNAPSHOT-all.jar
+RUN wget -O cineast-api.jar -P ./cineast -N https://vitrivr-config-files.s3.eu-central-1.amazonaws.com/cineast-api-3.0.1-full.jar
+RUN wget -P ./cottontail -N https://vitrivr-config-files.s3.eu-central-1.amazonaws.com/cottontaildb-1.0-SNAPSHOT-all.jar
 
 # set app port
 EXPOSE 5003 4567 4568 1865
